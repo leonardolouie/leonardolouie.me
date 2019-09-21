@@ -4,7 +4,7 @@ require('dotenv').config({
 })
 
 const clientConfig = require('./client-config')
-const token = "skFIa3m7CYEU96M77u1LXbH891nhPhK0TjLNUTzT90nCaxckBrbCf1Ky538PIx6bkwmC3MEywhJri6s1ZuWVnli4p4SUcCbaxsN17r1JjHCVn7e1sqW0NpaRIOH4Mofp5QWzjkIy9gcGhGeUmdFUr3pKSFsvhC0gZKbhvnuUNdKIdo9EP0mv"
+const token = process.env.SANITY_READ_TOKEN
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
