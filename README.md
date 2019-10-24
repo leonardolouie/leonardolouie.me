@@ -1,8 +1,5 @@
-# sanity-gatsby-portfolio
+## My Portofolio made with sanity.io + gatsby js  + netlify
 
-A portfolio using structured content and a static site builder.
-
-Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-gatsby-portfolio).
 
 ## What you have
 
@@ -26,13 +23,3 @@ Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-i
 3. Restart the development server (`ctrl + C` and `npm run dev`).
 
 If you want to disable the preview you can set `watchMode: false` in gatsby-config.js. If you just want to preview published changes you can set `overlayDrafts: false` in gatsby-config.js.
-
-## Deploy changes
-
-Netlify automatically deploys new changes commited to the `master` branch on GitHub. If you want to change the deployment branch you may do so in [build & deploy settings on Netlify](https://www.netlify.com/docs/continuous-deployment/#branches-deploys).
-
-## Get help
-
-[![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
-
-Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
