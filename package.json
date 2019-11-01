@@ -17,7 +17,6 @@
     "lerna": "^3.13.1"
   },
   "dependencies": {
-    "mdbreact": "^4.22.0",
     "node-sass": "^4.13.0"
   }
 }
