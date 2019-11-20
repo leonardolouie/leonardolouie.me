@@ -6,7 +6,7 @@ export default function navbar() {
     setOpen(!isOpen)
   }
   return (
-    <header className="bg-primary text-dim font-bold fadedInAnimation">
+    <header className="bg-primary text-dim font-bold">
       <div className="py-10 px-5 md:flex justify-between md:px-20 container mx-auto">
         <div className="flex justify-between">
           LEONARDO LOUIE <img src={hamburger} className=" w-6 md:hidden" onClick={handleOpen} />

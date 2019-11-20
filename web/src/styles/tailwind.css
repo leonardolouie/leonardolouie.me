@@ -8,19 +8,13 @@ body {
   @apply bg-secondary;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
   font-family: roboto, sans-serif;
   font-weight: 700;
   font-style: normal;
 
   @apply text-4xl;
 }
-
 p {
   font-family: 'Segoe UI', sans-serif;
   font-style: normal;

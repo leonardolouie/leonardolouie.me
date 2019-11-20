@@ -2,10 +2,11 @@ import React from 'react'
 import github from '../../../static/images/github-brands.svg'
 import linkedin from '../../../static/images/linkedin-brands.svg'
 import twitter from '../../../static/images/twitter-square-brands.svg'
+import instagram from '../../../static/images/instagram-brands.svg'
 
 export default function hero() {
   return (
-    <div className="container mx-auto py-20 fadedInAnimation">
+    <div className="container mx-auto md:py-20 fadedInAnimation">
       <div className="text-center">
         <h1 className="text-white text-dim mt-20 mb-10">Full Stack Developer + Music Enthusiast</h1>
         <div className="mx-auto sm:3/4 lg:w-1/2">
@@ -17,9 +18,18 @@ export default function hero() {
           </p>
         </div>
         <div className={`flex justify-center mt-20 `}>
-          <img src={github} className="w-10 mr-5 " />
-          <img src={linkedin} className="w-10 mr-5" />
-          <img src={twitter} className="w-10 mr-5" />
+          <a href="https://www.linkedin.com/in/leonardo-louie-ordo%C3%B1ez-940673176/">
+            <img src={linkedin} className="w-8 md:w-10 mr-5" />
+          </a>
+          <a href="https://github.com/leonardolouie">
+            <img src={github} className="w-8 md:w-10 mr-5" />
+          </a>
+          <a href="https://twitter.com/louieofficial30">
+            <img src={twitter} className="w-8 md:w-10 mr-5" />
+          </a>
+          <a href="https://instagram.com/leonardolouie/">
+            <img src={instagram} className="w-8 md:w-10 mr-5" />
+          </a>
         </div>
       </div>
     </div>
