@@ -17,4 +17,25 @@ h6 {
   font-family: roboto, sans-serif;
   font-weight: 700;
   font-style: normal;
+
+  @apply text-4xl;
+}
+
+p {
+  font-family: 'Segoe UI', sans-serif;
+  font-style: normal;
+}
+
+/** animations**/
+@keyframes fadedInAnimation {
+  0% {
+    opacity: 0;
+  }
+  93% {
+    opacity: 200;
+  }
+}
+
+.fadedInAnimation {
+  animation: fadedInAnimation 3s 1 0s ease-in-out;
 }
