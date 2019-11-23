@@ -94,16 +94,17 @@ const IndexPage = () => {
             }
           ></Hero>
         </Section>
-        {/* <Section
+        <Section
           title="Project and Works"
-          subtitle="Previous and currently project made by progressive languanges in the world"
+          subtitle="Previous and currently project made by progressive programming languanges in the world"
         >
-          <Cards />
-        </Section> */}
+          <Cards title="Workgalore" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
+          <Cards title="Olap Cemetery" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
+        </Section>
 
         <Section
           title="Tech Stack"
-          subtitle="I am working with 1year experience now and a lot of technoliges i have been used for my previous projects. I have started using Laravel PHP, CSS and JQUERY and time goes by I have learned some frameworks of JS like Node and React. On my devops part I am currently using Heroku, Netliy and some services on AWS"
+          subtitle="I have been working for a year now, with lots of technologies encountered and used for the projects I made. I've started my web development career by using Laravel PHP, CSS and JQUERY. As the time goes by I learned more frameworks of JS such as Node and React. On the other hand, for DevOps part I am currently using Heroku, Netlify and some services on AWS."
         >
           <LogoList logolistItem={LogoListItem} />
         </Section>

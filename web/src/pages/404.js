@@ -7,7 +7,7 @@ const PageNotFound = () => {
   return (
     <>
       <Section>
-        <Hero title="404 | Page not found"></Hero>
+        <Hero title="404 | Page not found" />
         <Link to="/" className="text-white">
           Go back
         </Link>
