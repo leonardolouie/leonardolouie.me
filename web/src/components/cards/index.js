@@ -4,22 +4,23 @@ import PropTypes from 'prop-types'
 export default function Cards({ title, image, imageAlt, description, techTags }) {
   console.log(techTags)
   return (
-    <div class="max-w-xs rounded overflow-hidden shadow-lg my-2 bg-white">
-      <img class="w-full" src={image} alt={imageAlt} />
-      <div class="px-6 py-4">
-        <h1 class="font-bold text-xl mb-2">{title}</h1>
-        <p class="text-grey-darker text-base">{description}</p>
+    <div className="max-w-xs rounded-lg overflow-hidden shadow-2xl mx-5 my-2 bg-primary">
+      <div className="w-full opacity-100 hover:opacity-25">
+        <img src={image} alt={imageAlt} />
       </div>
-      <div class="px-6 py-4">
-        {techTags &&
-          techTags.map((value, index) => (
-            <span
-              key={index}
-              class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-            >
-              {value.text}
-            </span>
-          ))}
+      <div className="sm:px-6 sm:py-4">
+        <h1 className="font-bold text-xl mb-2 text-dim hover:text-white">{title}</h1>
+        <p className="text-grey-darker text-base text-dim  hover:text-white">{description}</p>
+      </div>
+      <div className="px-6 flex flex-row">
+        <a class="px-2 opacity-50 hover:opacity-100 focus:opacity-100" href="https://laravel.com/docs/5.8/queries">
+          <img
+            class="w-full"
+            src="https://stripe.com/img/v3/payments/overview/logos/kickstarter.svg"
+            alt=""
+            style={{ 'max-height': '60px' }}
+          />
+        </a>
       </div>
     </div>
   )
