@@ -5,7 +5,7 @@ export default function ProfileCard({ name, job, location, description, promotio
   return (
     <div className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white   lg:mx-0 bg-primary text-white">
       <div className="p-4 md:p-12 text-center lg:text-left">
-        <h1 className="text-3xl font-bold pt-8 lg:pt-0">{name}</h1>
+        <h2 className="text-2xl font-bold pt-8 lg:pt-0">{name}</h2>
         <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-white opacity-50"></div>
         <p className="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
           <svg className="h-4 fill-current text-white pr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
