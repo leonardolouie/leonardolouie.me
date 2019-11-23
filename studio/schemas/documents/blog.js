@@ -1,8 +1,8 @@
 import { format } from "date-fns";
 
 export default {
-  name: "project",
-  title: "Project",
+  name: "blog",
+  title: "Blog",
   type: "document",
   fields: [
     {
@@ -32,16 +32,6 @@ export default {
       type: "simplePortableText"
     },
     {
-      name: "startedAt",
-      title: "Started at",
-      type: "datetime"
-    },
-    {
-      name: "endedAt",
-      title: "Ended at",
-      type: "datetime"
-    },
-    {
       name: "mainImage",
       title: "Main image",
       type: "figure"
@@ -52,25 +42,13 @@ export default {
       type: "projectPortableText"
     },
     {
-      title: "Technology used",
-      name: "techUsed",
+      name: "relatedBlogs",
+      title: "Related Blogs",
       type: "array",
-      of: [{ type: "reference", to: { type: "logo" } }]
+      of: [{ type: "reference", to: { type: "blog" } }]
     },
     {
-      name: "members",
-      title: "Members",
-      type: "array",
-      of: [{ type: "projectMember" }]
-    },
-    {
-      name: "relatedProjects",
-      title: "Related projects",
-      type: "array",
-      of: [{ type: "reference", to: { type: "project" } }]
-    },
-    {
-      title: "Show this project ?",
+      title: "Show this blog ?",
       name: "show",
       type: "boolean"
     }

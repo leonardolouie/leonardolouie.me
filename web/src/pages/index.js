@@ -7,7 +7,6 @@ import ProfileCard from '../components/profileCard'
 import LogoList from '../components/logoList'
 
 import node from '../../static/images/nodejslogo.png'
-import react from '../../static/images/react.png'
 import gatsby from '../../static/images/gatsby.png'
 import laravel from '../../static/images/laravel.png'
 import graphql from '../../static/images/graphql.png'
@@ -80,7 +79,7 @@ const profilecard = {
       imageAlt: 'linkedin'
     }
   ],
-  desscription: 'Alive and grateful'
+  description: 'Email: leonardolouie30@gmail.com'
 }
 const IndexPage = () => {
   return (
@@ -90,7 +89,7 @@ const IndexPage = () => {
           <Hero
             title={'Software Engineer + Music Enthusiast'}
             body={
-              'I am Leonardo louie ordonez currenlty software eningeer at unosoft labs. I am full stack developer which is knowledgeable from designing the product until to delivering it to the user. Web and mobile app is my passion to do. Specialize on JAMSTACK (Static Site)'
+              'I am/ This is Leonardo Louie Ordoñez currenlty software eningeer at Unosoft Labs. I am full stack developer which is knowledgeable from designing the product until to delivering it to the user. Web and mobile app is my passion to do. Specialize on JAMSTACK (Static Site)'
             }
           ></Hero>
         </Section>
@@ -98,7 +97,19 @@ const IndexPage = () => {
           title="Project and Works"
           subtitle="Previous and currently project made by progressive programming languanges in the world"
         >
-          <Cards title="Workgalore" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
+          <Cards
+            title="https://workgalore.com"
+            image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'}
+            description={'made with'}
+            techTags={[{ image: node }, { image: gatsby }]}
+          />
+          <Cards title="Olap Cemetery" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
+          <Cards
+            title="Olap Cemetery"
+            image={'https://eci.gov.in/uploads/monthly_2019_01/large.4.png.61bcef5b210d6b08be9d5fd7df1fbc2f.png'}
+          />
+          <Cards title="Olap Cemetery" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
+          <Cards title="Olap Cemetery" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
           <Cards title="Olap Cemetery" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
         </Section>
 

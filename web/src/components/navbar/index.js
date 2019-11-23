@@ -11,7 +11,7 @@ export default function navbar() {
   const navBar = [
     { name: 'blog', link: 'blog' },
     { name: 'project', link: 'project' },
-    { name: 'contact', link: 'contact' }
+    { name: 'contacts', link: 'contacts' }
   ]
 
   return (
@@ -30,7 +30,7 @@ export default function navbar() {
           <ul className={`py-5 md:py-0 md:flex ${isOpen ? '' : 'hidden'}`}>
             {navbar &&
               navBar.map((value, key) => (
-                <li className="md:px-5 lg:px-5 uppercase" key={key}>
+                <li className="md:px-5 lg:px-5 uppercase hover:text-dim" key={key}>
                   <Link to={value.link}>{value.name}</Link>
                 </li>
               ))}

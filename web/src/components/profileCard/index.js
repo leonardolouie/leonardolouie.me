@@ -46,5 +46,5 @@ ProfileCard.propTypes = {
   location: PropTypes.string,
   description: PropTypes.string,
   promotion: PropTypes.string,
-  social: PropTypes.object
+  social: PropTypes.array
 }
