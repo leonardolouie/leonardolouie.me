@@ -8,7 +8,7 @@ export default function Cards({ title, image, imageAlt, description, techTags })
         <img src={image} alt={imageAlt} />
       </div>
       <div className="sm:px-6 sm:py-4">
-        <h1 className="font-bold text-xl mb-2 text-dim hover:text-white">{title}</h1>
+        <h2 className="font-bold text-xl mb-2 text-dim hover:text-white">{title}</h2>
         <p className="text-grey-darker text-base text-dim  hover:text-white">{description}</p>
       </div>
       <div className="px-6 flex flex-row">

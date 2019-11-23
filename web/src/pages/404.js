@@ -1,0 +1,19 @@
+import React from 'react'
+import Section from '../components/section'
+import Hero from '../components/hero'
+import { Link } from 'gatsby'
+
+const PageNotFound = () => {
+  return (
+    <>
+      <Section>
+        <Hero title="404 | Page not found"></Hero>
+        <Link to="/" className="text-white">
+          Go back
+        </Link>
+      </Section>
+    </>
+  )
+}
+
+export default PageNotFound

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import hamburger from '../../../static/images/hamburger.png'
+import hamburger from '../../../static/images/bars-solid.svg'
 
 export default function navbar() {
   const [isOpen, setOpen] = useState(false)
@@ -15,10 +15,10 @@ export default function navbar() {
   ]
 
   return (
-    <header className="bg-primary text-dim font-bold">
+    <header className="bg-primary text-white font-bold">
       <div className="py-10 px-5 md:flex justify-between md:px-20 container mx-auto">
         <div className="flex justify-between">
-          LEONARDO LOUIE <img src={hamburger} className="w-6 md:hidden" onClick={handleOpen} />
+          <Link to="/"> LEONARDO LOUIE </Link> <img src={hamburger} className="w-6 md:hidden" onClick={handleOpen} />
         </div>
 
         <div>

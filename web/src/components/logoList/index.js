@@ -1,12 +1,12 @@
 import React from 'react'
-export default function Logo({ images }) {
+export default function Logo({ logolistItem }) {
   return (
     <div className="flex flex-wrap justify-center">
-      {images &&
-        images.map((value, key) => (
-          <a href="https://facebook.com" key={key}>
+      {logolistItem &&
+        logolistItem.map((value, key) => (
+          <a href={value.link} key={key}>
             <img
-              className="w-20 h-auto  opacity-75 hover:opacity-100 focus:opacity-100"
+              className="w-12 mx-1 opacity-75 hover:opacity-100 focus:opacity-100 logo"
               alt={value.imageAlt}
               src={value.image}
             ></img>
