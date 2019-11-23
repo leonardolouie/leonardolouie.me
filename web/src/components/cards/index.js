@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export default function Cards({ title, image, imageAlt, description, techTags }) {
-  console.log(techTags)
   return (
     <div className="max-w-xs rounded-lg overflow-hidden shadow-2xl mx-5 my-2 bg-primary">
       <div className="w-full opacity-100 hover:opacity-25">
@@ -13,14 +12,12 @@ export default function Cards({ title, image, imageAlt, description, techTags })
         <p className="text-grey-darker text-base text-dim  hover:text-white">{description}</p>
       </div>
       <div className="px-6 flex flex-row">
-        <a class="px-2 opacity-50 hover:opacity-100 focus:opacity-100" href="https://laravel.com/docs/5.8/queries">
-          <img
-            class="w-full"
-            src="https://stripe.com/img/v3/payments/overview/logos/kickstarter.svg"
-            alt=""
-            style={{ 'max-height': '60px' }}
-          />
-        </a>
+        {techTags &&
+          techTags.map((value, key) => (
+            <a className="px-2 opacity-50 hover:opacity-100 focus:opacity-100" href={value.link} key={key}>
+              <img className="w-full" src={value.image} alt={value.imageAlt} style={{ maxHeight: '60px' }} />
+            </a>
+          ))}
       </div>
     </div>
   )
@@ -31,5 +28,5 @@ Cards.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   imageAlt: PropTypes.string,
-  techTags: PropTypes.object
+  techTags: PropTypes.array
 }

@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
+import { Link } from 'gatsby'
 import hamburger from '../../../static/images/hamburger.png'
+
 export default function navbar() {
   const [isOpen, setOpen] = useState(false)
   const handleOpen = () => {
     setOpen(!isOpen)
   }
+
+  const navBar = [
+    { name: 'blog', link: 'blog' },
+    { name: 'project', link: 'project' },
+    { name: 'contact', link: 'contact' }
+  ]
+
   return (
     <header className="bg-primary text-dim font-bold">
       <div className="py-10 px-5 md:flex justify-between md:px-20 container mx-auto">
@@ -14,10 +23,12 @@ export default function navbar() {
 
         <div>
           <ul className={`py-5 md:py-0 md:flex ${isOpen ? '' : 'hidden'}`}>
-            <li className="md:px-5 lg:px-5">CONTACTS</li>
-            <li className="md:px-5 lg:px-5">BLOG</li>
-            <li className="md:px-5 lg:px-5">PROJECTS</li>
-            <li className="md:px-5 lg:px-5">ABOUT</li>
+            {navbar &&
+              navBar.map((value, key) => (
+                <li className="md:px-5 lg:px-5 uppercase" key={key}>
+                  <Link to={value.link}>{value.name}</Link>
+                </li>
+              ))}
           </ul>
         </div>
       </div>
