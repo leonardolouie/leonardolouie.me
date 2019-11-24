@@ -1,8 +1,8 @@
 import { format } from "date-fns";
 
 export default {
-  name: "project",
-  title: "Project",
+  name: "blog",
+  title: "Blog",
   type: "document",
   fields: [
     {
@@ -17,7 +17,7 @@ export default {
       description: "Some frontend will require a slug to be set to be able to show the project",
       options: {
         source: "title",
-        maxLength: 96
+        maxLength: 20
       }
     },
     {
@@ -37,16 +37,6 @@ export default {
       type: "text"
     },
     {
-      name: "startedAt",
-      title: "Started at",
-      type: "datetime"
-    },
-    {
-      name: "endedAt",
-      title: "Ended at",
-      type: "datetime"
-    },
-    {
       name: "image",
       title: "Image",
       type: "figure"
@@ -57,25 +47,7 @@ export default {
       type: "projectPortableText"
     },
     {
-      title: "Technology used",
-      name: "techUsed",
-      type: "array",
-      of: [{ type: "reference", to: { type: "logo" } }]
-    },
-    {
-      name: "members",
-      title: "Members",
-      type: "array",
-      of: [{ type: "projectMember" }]
-    },
-    {
-      name: "relatedProjects",
-      title: "Related projects",
-      type: "array",
-      of: [{ type: "reference", to: { type: "project" } }]
-    },
-    {
-      title: "Show this project ?",
+      title: "Show this Blog ?",
       name: "show",
       type: "boolean"
     }
