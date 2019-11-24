@@ -21,15 +21,20 @@ export default {
       }
     },
     {
+      name: "url",
+      type: "url",
+      title: "Site Url"
+    },
+    {
       name: "publishedAt",
       title: "Published at",
       description: "You can use this field to schedule projects where you show them",
       type: "datetime"
     },
     {
-      name: "excerpt",
-      title: "Excerpt",
-      type: "simplePortableText"
+      name: "description",
+      title: "Description",
+      type: "text"
     },
     {
       name: "startedAt",
@@ -42,8 +47,8 @@ export default {
       type: "datetime"
     },
     {
-      name: "mainImage",
-      title: "Main image",
+      name: "image",
+      title: "Image",
       type: "figure"
     },
     {
@@ -80,7 +85,7 @@ export default {
       title: "title",
       publishedAt: "publishedAt",
       slug: "slug",
-      media: "mainImage"
+      media: "image"
     },
     prepare({ title = "No title", publishedAt, slug = {}, media }) {
       const dateSegment = format(publishedAt, "YYYY/MM");

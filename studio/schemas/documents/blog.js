@@ -17,8 +17,13 @@ export default {
       description: "Some frontend will require a slug to be set to be able to show the project",
       options: {
         source: "title",
-        maxLength: 96
+        maxLength: 20
       }
+    },
+    {
+      name: "url",
+      type: "url",
+      title: "Site Url"
     },
     {
       name: "publishedAt",
@@ -27,13 +32,13 @@ export default {
       type: "datetime"
     },
     {
-      name: "excerpt",
-      title: "Excerpt",
-      type: "simplePortableText"
+      name: "description",
+      title: "Description",
+      type: "text"
     },
     {
-      name: "mainImage",
-      title: "Main image",
+      name: "image",
+      title: "Image",
       type: "figure"
     },
     {
@@ -42,13 +47,7 @@ export default {
       type: "projectPortableText"
     },
     {
-      name: "relatedBlogs",
-      title: "Related Blogs",
-      type: "array",
-      of: [{ type: "reference", to: { type: "blog" } }]
-    },
-    {
-      title: "Show this blog ?",
+      title: "Show this Blog ?",
       name: "show",
       type: "boolean"
     }
@@ -58,7 +57,7 @@ export default {
       title: "title",
       publishedAt: "publishedAt",
       slug: "slug",
-      media: "mainImage"
+      media: "image"
     },
     prepare({ title = "No title", publishedAt, slug = {}, media }) {
       const dateSegment = format(publishedAt, "YYYY/MM");

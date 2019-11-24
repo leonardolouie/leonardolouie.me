@@ -9,14 +9,14 @@ export default {
       title: "Title"
     },
     {
-      name: "logoUrl",
+      name: "site",
       type: "url",
-      title: "Logo Url"
+      title: "Site"
     },
     {
       name: "image",
-      type: "image",
-      title: "Image File"
+      type: "figure",
+      title: "Image"
     }
   ]
 };
