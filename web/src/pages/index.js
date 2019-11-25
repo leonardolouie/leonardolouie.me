@@ -5,11 +5,11 @@ import Hero from '../components/hero'
 import Cards from '../components/cards'
 import ProfileCard from '../components/profileCard'
 import LogoList from '../components/logoList'
-
+import { graphql } from 'gatsby'
 import node from '../../static/images/nodejslogo.png'
 import gatsby from '../../static/images/gatsby.png'
 import laravel from '../../static/images/laravel.png'
-import graphql from '../../static/images/graphql.png'
+
 import tailwind from '../../static/images/tailwind.png'
 import contentful from '../../static/images/contentful.png'
 import sanity from '../../static/images/sanity.png'
@@ -36,11 +36,6 @@ const LogoListItem = [
     image: laravel,
     imageAlt: 'Laravel',
     link: 'https://laravel.com/'
-  },
-  {
-    image: graphql,
-    imageAlt: 'https://laravel.com/',
-    link: 'https://graphql.org'
   },
   {
     image: contentful,
@@ -81,11 +76,12 @@ const profilecard = {
   ],
   description: 'Email: leonardolouie30@gmail.com'
 }
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const { projects } = data
   return (
     <>
       <Layout>
-        <Section>
+        <Section style={'background__svg-random'}>
           <Hero
             title={'Software Engineer + Music Enthusiast'}
             body={
@@ -97,20 +93,16 @@ const IndexPage = () => {
           title="Project and Works"
           subtitle="Previous and currently project made by progressive programming languanges in the world"
         >
-          <Cards
-            title="https://workgalore.com"
-            image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'}
-            description={'made with'}
-            techTags={[{ image: node }, { image: gatsby }]}
-          />
-          <Cards title="Olap Cemetery" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
-          <Cards
-            title="Olap Cemetery"
-            image={'https://eci.gov.in/uploads/monthly_2019_01/large.4.png.61bcef5b210d6b08be9d5fd7df1fbc2f.png'}
-          />
-          <Cards title="Olap Cemetery" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
-          <Cards title="Olap Cemetery" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
-          <Cards title="Olap Cemetery" image={'https://www.intrepiditservices.com/assets/mobile/android.jpg'} />
+          {projects.edges.map((value, key) => (
+            <Cards
+              title={value.node.title}
+              image={value.node.image.asset.fluid.src}
+              imageAlt={value.node.image.caption}
+              description={value.node.description}
+              techTags={value.node.techUsed}
+              key={key}
+            />
+          ))}
         </Section>
 
         <Section
@@ -132,3 +124,37 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+export const query = graphql`
+  query ProjectQuery {
+    projects: allSanityProject {
+      edges {
+        node {
+          title
+          description
+          url
+          image {
+            caption
+            asset {
+              fluid {
+                src
+              }
+            }
+          }
+          description
+          techUsed {
+            site
+            name
+            image {
+              caption
+              asset {
+                fluid {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
