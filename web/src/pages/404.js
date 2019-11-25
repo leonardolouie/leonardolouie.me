@@ -9,7 +9,7 @@ const PageNotFound = () => {
       <Section>
         <Hero title="404 | Page not found" />
         <Link to="/" className="text-white">
-          Go back
+          Go Back
         </Link>
       </Section>
     </>

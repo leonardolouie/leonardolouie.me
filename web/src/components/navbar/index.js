@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import hamburger from '../../../static/images/bars-solid.svg'
 
 export default function navbar() {
@@ -31,7 +32,9 @@ export default function navbar() {
             {navbar &&
               navBar.map((value, key) => (
                 <li className="md:px-5 lg:px-5 uppercase hover:text-dim" key={key}>
-                  <Link to={value.link}>{value.name}</Link>
+                  <AniLink swipe to={value.link}>
+                    {value.name}
+                  </AniLink>
                 </li>
               ))}
           </ul>
