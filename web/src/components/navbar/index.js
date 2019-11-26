@@ -20,7 +20,9 @@ export default function navbar() {
       <div className="py-10 px-5 md:flex justify-between md:px-20 container mx-auto">
         <div className="flex justify-between">
           <div>
-            <Link to="/"> LEONARDO LOUIE </Link>
+            <AniLink paintDrip hex="#252627" to={'/'}>
+              LEONARDO LOUIE
+            </AniLink>
           </div>
           <div>
             <img src={hamburger} className="w-6 md:hidden" onClick={handleOpen} />
@@ -32,7 +34,7 @@ export default function navbar() {
             {navbar &&
               navBar.map((value, key) => (
                 <li className="md:px-5 lg:px-5 uppercase hover:text-dim" key={key}>
-                  <AniLink swipe to={value.link}>
+                  <AniLink paintDrip hex="#252627" to={value.link}>
                     {value.name}
                   </AniLink>
                 </li>
