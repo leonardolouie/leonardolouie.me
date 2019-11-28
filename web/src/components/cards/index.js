@@ -16,8 +16,8 @@ export default function Cards({ title, image, imageAlt, description, techTags })
       <div className="px-6 flex flex-row justify-center">
         {techTags &&
           techTags.map((value, key) => (
-            <a className="px-2 opacity-50 hover:opacity-100 focus:opacity-100" href={value.link} key={key}>
-              <img className="h-auto w-5  mb-5" src={value.image} alt={value.imageAlt} />
+            <a className="px-2 opacity-50 hover:opacity-100 focus:opacity-100" href={value.site} key={key}>
+              <img className="h-auto w-5  mb-5" src={value.image.asset.fluid.src} alt={value.image.description} />
             </a>
           ))}
       </div>

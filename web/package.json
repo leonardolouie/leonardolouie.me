@@ -21,7 +21,9 @@
     "gatsby-plugin-google-analytics": "^2.1.28",
     "gatsby-plugin-postcss": "^2.1.14",
     "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-transition-link": "^1.16.2",
     "gatsby-source-sanity": "^4.0.1",
+    "gsap": "^3.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0"
