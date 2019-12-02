@@ -92,6 +92,8 @@ const IndexPage = ({ data }) => {
         <Section
           title="Project and Works"
           subtitle="Previous and currently project made by progressive programming languanges in the world"
+          bottomTitle="See more ?"
+          bottomTitleLink={'/project'}
         >
           {projects.edges.map((value, key) => (
             <Cards
@@ -114,7 +116,7 @@ const IndexPage = ({ data }) => {
 
         <Section
           title="Contact Me"
-          subtitle="I want to work with you. You can ping me up from all the social media site's below"
+          subtitle="Want to work with me. You can ping me up from all the social media site's below"
         >
           <ProfileCard {...profilecard} />
         </Section>
