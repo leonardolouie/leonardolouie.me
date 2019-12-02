@@ -85,12 +85,12 @@ const IndexPage = ({ data }) => {
           <Hero
             title={'Software Engineer + Music Enthusiast'}
             body={
-              'I am/ This is Leonardo Louie Ordoñez currenlty software eningeer at Unosoft Labs. I am full stack developer which is knowledgeable from designing the product until to delivering it to the user. Web and mobile app is my passion to do. Specialize on JAMSTACK (Static Site)'
+              'I am/ This is Leonardo Louie Ordoñez currenlty software eningeer at Unosoft Labs. I am full stack developer which is able to design the product until to deliver it to the user. Web and mobile app is my passion to do. Specialize on JAMSTACK (Static Site)'
             }
           ></Hero>
         </Section>
         <Section
-          title="Project and Works"
+          title="Projects and Works"
           subtitle="Previous and currently project made by progressive programming languanges in the world"
           bottomTitle="See more ?"
           bottomTitleLink={'/project'}
