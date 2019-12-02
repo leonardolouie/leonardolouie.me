@@ -97,6 +97,7 @@ const IndexPage = ({ data }) => {
         >
           {projects.edges.map((value, key) => (
             <Cards
+              url={value.node.url}
               title={value.node.title}
               image={value.node.image.asset.fluid.src}
               imageAlt={value.node.image.caption}

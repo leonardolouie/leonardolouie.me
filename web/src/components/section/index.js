@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 export default function Section({ title, subtitle, children, style, bottomTitle, bottomTitleLink, bottomSubTitle }) {
-  console.log(bottomTitleLink)
   return (
     <div className={style}>
       <div className="container mx-auto  text-center py-20 section fadedInAnimation">

@@ -17,7 +17,7 @@ export default {
       description: "Some frontend will require a slug to be set to be able to show the project",
       options: {
         source: "title",
-        maxLength: 96
+        maxLength: 30
       }
     },
     {
