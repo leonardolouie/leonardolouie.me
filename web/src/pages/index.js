@@ -85,13 +85,13 @@ const IndexPage = ({ data }) => {
           <Hero
             title={'Software Engineer + Music Enthusiast'}
             body={
-              'I am/ This is Leonardo Louie Ordoñez currenlty software eningeer at Unosoft Labs. I am full stack developer which is able to design the product until to deliver it to the user. Web and mobile app is my passion to do. Specialize on JAMSTACK (Static Site)'
+              'This is Leonardo Louie Ordoñez currently working as Software Engineer at Unosoft Labs. I am full stack developer which is aim to design the product until it is delivered to the user. Besides, I’m fond of making websites and mobile app: specialize on JAMSTACK (Static Site).'
             }
           ></Hero>
         </Section>
         <Section
           title="Projects and Works"
-          subtitle="Previous and currently project made by progressive programming languanges in the world"
+          subtitle="Below are samples of my previous works and ongoing projects made by progressive programming languages in the world"
           bottomTitle="See more ?"
           bottomTitleLink={'/project'}
         >
@@ -110,14 +110,14 @@ const IndexPage = ({ data }) => {
 
         <Section
           title="Tech Stack"
-          subtitle="I have been working for a year now, with lots of technologies encountered and used for the projects I made. I've started my web development career by using Laravel PHP, CSS and JQUERY. As the time goes by I learned more frameworks of JS such as Node and React. On the other hand, for DevOps part I am currently using Heroku, Netlify and some services on AWS."
+          subtitle="I've started my web development career by using Laravel PHP, CSS and JQUERY. As of the moment, I’m working for a year with lots of technologies encountered and used for the projects I made. In addition to that, I have learned more frameworks of JS such as Node and React. While, for DevOps part, I am currently using Heroku, Netlify and some services on AWS."
         >
           <LogoList logolistItem={LogoListItem} />
         </Section>
 
         <Section
           title="Contact Me"
-          subtitle="Want to work with me. You can ping me up from all the social media site's below"
+          subtitle="If you’re interested to work with me, you can ping me from all the social media sites below:"
         >
           <ProfileCard {...profilecard} />
         </Section>
