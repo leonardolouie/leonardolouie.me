@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 
 export default function Cards({ title, image, imageAlt, description, techTags, url }) {
   return (
-    <div className="max-w-xs rounded-lg overflow-hidden shadow-2xl  mx-4 lg:mx-10 my-2 bg-primary">
+    <div className="mb-10 max-w-xs rounded-lg overflow-hidden shadow-2xl  mx-4 lg:mx-10 my-2 bg-primary">
       <div className="w-full opacity-100 hover:opacity-25">
         <img src={image} alt={imageAlt} />
       </div>
-      <div className="sm:px-6 sm:py-4">
+      <div className="mt-5 sm:px-6 sm:py-4">
         <a href={url}>
-          <h2 className="font-bold text-lg mb-2 text-white hover:text-dim">{title}</h2>
+          <h2 className="font-bold text-lg text-white hover:text-dim">{title}</h2>
         </a>
         <p className="text-grey-darker text-base text-dim ">{description}</p>
       </div>
