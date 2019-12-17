@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../components/layout'
-import Section from '../components/section'
-import Hero from '../components/hero'
+import Layout from 'components/layout'
+import Section from 'components/section'
+import Hero from 'components/hero'
 
 const BlogPage = () => {
   return (

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import hamburger from '../../../static/images/bars-solid.svg'
+import hamburger from 'images/bars-solid.svg'
 
 export default function navbar() {
   const [isOpen, setOpen] = useState(false)

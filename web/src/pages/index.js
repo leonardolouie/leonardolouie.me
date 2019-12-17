@@ -1,25 +1,25 @@
 import React from 'react'
-import Layout from '../components/layout'
-import Section from '../components/section'
-import Hero from '../components/hero'
-import Cards from '../components/cards'
-import ProfileCard from '../components/profileCard'
-import LogoList from '../components/logoList'
+import Layout from 'components/layout'
+import Section from 'components/section'
+import Hero from 'components/hero'
+import Cards from 'components/cards'
+import ProfileCard from 'components/profileCard'
+import LogoList from 'components/logoList'
 import { graphql } from 'gatsby'
-import node from '../../static/images/nodejslogo.png'
-import gatsby from '../../static/images/gatsby.png'
-import laravel from '../../static/images/laravel.png'
+import node from 'images/nodejslogo.png'
+import gatsby from 'images/gatsby.png'
+import laravel from 'images/laravel.png'
 
-import tailwind from '../../static/images/tailwind.png'
-import contentful from '../../static/images/contentful.png'
-import sanity from '../../static/images/sanity.png'
-import redux from '../../static/images/redux.png'
+import tailwind from 'images/tailwind.png'
+import contentful from 'images/contentful.png'
+import sanity from 'images/sanity.png'
+import redux from 'images/redux.png'
 
-import twitter from '../../static/images/twitter-brands.svg'
-import instagram from '../../static/images/instagram-brands.svg'
-import github from '../../static/images/github-alt-brands.svg'
-import facebook from '../../static/images/facebook-.svg'
-import linkedin from '../../static/images/linkedin-brands.svg'
+import twitter from 'images/twitter-brands.svg'
+import instagram from 'images/instagram-brands.svg'
+import github from 'images/github-alt-brands.svg'
+import facebook from 'images/facebook-.svg'
+import linkedin from 'images/linkedin-brands.svg'
 
 const LogoListItem = [
   {
@@ -99,7 +99,7 @@ const IndexPage = ({ data }) => {
             <Cards
               url={value.node.url}
               title={value.node.title}
-              image={value.node.image.asset.fluid.src}
+              image={value.node.image.asset.fluid}
               imageAlt={value.node.image.caption}
               description={value.node.description}
               techTags={value.node.techUsed}
@@ -127,6 +127,7 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
+
 export const query = graphql`
   query ProjectQuery {
     projects: allSanityProject(filter: { show: { eq: true } }, limit: 6) {
@@ -139,7 +140,13 @@ export const query = graphql`
             caption
             asset {
               fluid {
+                base64
+                aspectRatio
                 src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
               }
             }
           }
@@ -151,7 +158,13 @@ export const query = graphql`
               caption
               asset {
                 fluid {
+                  base64
+                  aspectRatio
                   src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
                 }
               }
             }
