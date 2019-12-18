@@ -1,6 +1,6 @@
 // Load variables from `.env` as soon as possible
 const googleAnalyticsTrackerId = process.env.GOOGLE_ANALYTICS_TRACK_ID
-
+const path = require('path')
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 })
@@ -17,6 +17,15 @@ module.exports = {
         trackingId: googleAnalyticsTrackerId
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'img',
+        path: path.join(__dirname, 'src', 'images')
+      }
+    },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-postcss',
     'gatsby-plugin-transition-link',
     'gatsby-plugin-sass',

@@ -1,15 +1,28 @@
 import React from 'react'
-import Layout from '../components/layout'
-import Section from '../components/section'
-import Hero from '../components/hero'
+import Layout from 'components/layout'
+import Section from 'components/section'
+import SingleColumn from 'components/singleColumn'
+import { graphql } from 'gatsby'
 
 const ProjectPage = ({ data }) => {
-  const { projects } = data
+  const {
+    projects: { edges }
+  } = data
+
+  console.table(edges)
+
   return (
     <>
       <Layout>
-        <Section title="Project Page">
-          <Hero title="Currently this page is on development" />
+        <Section title="RECENT PROJECTS AND WORKS" flexType={'col'}>
+          {edges.map((value, key) => (
+            <SingleColumn
+              title={value.node.title}
+              slug={value.node.slug}
+              description={value.node.description}
+              key={key}
+            />
+          ))}
         </Section>
       </Layout>
     </>
@@ -19,12 +32,15 @@ const ProjectPage = ({ data }) => {
 export default ProjectPage
 export const query = graphql`
   query PageProjectQuery {
-    projects: allSanityProject(filter: {show: {eq: true}}) {
+    projects: allSanityProject(filter: { show: { eq: true } }) {
       edges {
         node {
           title
           description
           url
+          slug {
+            current
+          }
           image {
             caption
             asset {
