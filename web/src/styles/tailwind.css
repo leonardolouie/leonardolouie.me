@@ -19,15 +19,53 @@ body {
 }
 
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h6,
+strong {
   font-family: roboto, sans-serif;
   font-weight: 700;
   font-style: normal;
+
+
+  @apply text-white;
 }
 
-p {
+h1 { 
+  @apply  text-4xl;
+}
+h2 { 
+  @apply  text-3xl;
+}
+h3 { 
+  @apply  text-2xl;
+}
+h4 { 
+  @apply  text-xl;
+}
+h5 { 
+  @apply  text-lg;
+}
+
+h6 { 
+  @apply  text-sm;
+}
+
+
+
+
+
+
+
+
+
+p, em, span,li {
   font-family: 'Segoe UI', sans-serif;
   font-style: normal;
+
+  @apply text-dim;
 }
 
 /** animations**/
