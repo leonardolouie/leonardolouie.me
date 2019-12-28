@@ -6,6 +6,7 @@ import Cards from 'components/cards'
 import ProfileCard from 'components/profileCard'
 import LogoList from 'components/logoList'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 import node from 'images/nodejslogo.png'
 import gatsby from 'images/gatsby.png'
 import laravel from 'images/laravel.png'
@@ -20,6 +21,9 @@ import instagram from 'images/instagram-brands.svg'
 import github from 'images/github-alt-brands.svg'
 import facebook from 'images/facebook-.svg'
 import linkedin from 'images/linkedin-brands.svg'
+
+
+import Logo from '../images/mylogo.png'
 
 const LogoListItem = [
   {
@@ -76,14 +80,24 @@ const profilecard = {
   ],
   description: 'Email: leonardolouie30@gmail.com'
 }
+
+
+//For SEO
+const keywords= ['web developer', 'freelancer']
+const image= {src:Logo , alt:'leonardo louie logo'}
+
 const IndexPage = ({ data }) => {
   const { projects } = data
   return (
     <>
-      <Layout>
-        <Section style={'background__svg-random'}>
+      <Layout 
+        title={'Leonardo Louie | Software Engineer'} 
+        description={'Web Developer Leonardo Louie'} 
+        image={image}
+        keywords={keywords}>
+        <Section style={'background__svg-random'} flexType={'col'}>
           <Hero
-            title={'Software Engineer + Music Enthusiast'}
+            title={'Hi I am Leonardo Louie'}
             body={
               'This is Leonardo Louie Ordoñez currently working as Software Engineer at Unosoft Labs. I am full stack developer which is aim to design the product until it is delivered to the user. Besides, I’m fond of making websites and mobile app: specialize on JAMSTACK (Static Site).'
             }
@@ -95,17 +109,19 @@ const IndexPage = ({ data }) => {
           bottomTitle="See more ?"
           bottomTitleLink={'/project'}
         >
-          {projects.edges.map((value, key) => (
-            <Cards
-              url={value.node.url}
-              title={value.node.title}
-              image={value.node.image.asset.fluid}
-              imageAlt={value.node.image.caption}
-              description={value.node.description}
-              techTags={value.node.techUsed}
-              key={key}
-            />
-          ))}
+          {projects.edges.map((value, key) => {
+            return (
+              <Cards
+                url={value.node.url}
+                title={value.node.title}
+                image={value.node.image.asset.fluid}
+                imageAlt={value.node.image.caption}
+                description={value.node.description}
+                techTags={value.node.techUsed}
+                key={key}
+              />
+            )
+          })}
         </Section>
 
         <Section
@@ -127,6 +143,10 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
+
+IndexPage.propTypes = {
+  data: PropTypes.object
+}
 
 export const query = graphql`
   query ProjectQuery {

@@ -1,6 +1,5 @@
 // Load variables from `.env` as soon as possible
 
-
 module.exports = {
   sanity: {
     projectId: process.env.GATSBY_SANITY_PROJECT_ID,

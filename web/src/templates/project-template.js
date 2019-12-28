@@ -3,22 +3,24 @@ import { graphql } from 'gatsby'
 import Layout from 'components/layout'
 import Section from 'components/section'
 import Post from 'components/post'
+import PropTypes from 'prop-types'
 
-
-export default function ProjecTemplate({ data }) {
-  const {
-    projects
-  } = data
-
-
+const ProjecTemplate = ({ data }) => {
+  const { projects } = data
 
   return (
     <Layout>
       <Section flexType={'col'}>
-         <Post {...projects} />
+        <Post {...projects} />
       </Section>
     </Layout>
   )
+}
+
+export default ProjecTemplate
+
+ProjecTemplate.propTypes = {
+  data: PropTypes.object
 }
 
 export const query = graphql`
