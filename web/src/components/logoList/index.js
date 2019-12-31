@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export default function LogoList({ logolistItem }) {
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap">
       {logolistItem &&
         logolistItem.map((value, key) => {
           return (

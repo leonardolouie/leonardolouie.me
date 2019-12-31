@@ -15,7 +15,7 @@ export default function Section({
   const sectionTypes = flexType === undefined || flexType === null ? 'sm:flex-row' : `sm:flex-${flexType}`
   return (
     <div className={style}>
-      <div className="container mx-auto py-20 section fadedInAnimation">
+      <div className="container mx-auto py-10 section fadedInAnimation">
         <h1 className="text-white text-center text-white text-2xl">{title && title}</h1>
         <p className="text-dim mx-5 text-center lg:mx-64">{subtitle && subtitle}</p>
         <div className={`flex flex-wrap justify-center mt-10 ${sectionTypes}`}>{children}</div>
@@ -43,5 +43,6 @@ Section.propTypes = {
   background: PropTypes.string,
   subtitle: PropTypes.string,
   children: PropTypes.node,
+  style: PropTypes.string,
   flexType: PropTypes.oneOf(['row', 'col'])
 }

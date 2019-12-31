@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ProfileCard = ({ name, job, location, description, promotion, social }) => {
+const ProfileCard = ({ name, job, location, description, promotion }) => {
   return (
     <div className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white   lg:mx-0 bg-primary text-white">
       <div className="p-4 md:p-12 text-center lg:text-left">
@@ -27,14 +27,6 @@ const ProfileCard = ({ name, job, location, description, promotion, social }) =>
             </button>
           )}
         </div>
-        <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
-          {social &&
-            social.map((value, key) => {
-              <a className="link" href={value.link} key={key}>
-                <img className="h-auto w-8" src={value.image} alt={value.imageAlt} />
-              </a>
-            })}
-        </div>
       </div>
     </div>
   )
@@ -47,6 +39,5 @@ ProfileCard.propTypes = {
   job: PropTypes.string,
   location: PropTypes.string,
   description: PropTypes.string,
-  promotion: PropTypes.string,
-  social: PropTypes.array
+  promotion: PropTypes.string
 }

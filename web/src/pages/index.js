@@ -22,7 +22,6 @@ import github from 'images/github-alt-brands.svg'
 import facebook from 'images/facebook-.svg'
 import linkedin from 'images/linkedin-brands.svg'
 
-
 import Logo from '../images/mylogo.png'
 
 const LogoListItem = [
@@ -67,41 +66,43 @@ const profilecard = {
   name: 'Leonardo Louie Ordonez',
   job: 'Software Engineer @ Unosoft Labs',
   location: 'Manila PH',
-  social: [
-    { image: twitter, link: 'https://twitter.com/louieofficial30', imageAlt: 'twitter' },
-    { image: instagram, link: 'https://instagram.com/leonardolouie', imageAlt: 'twitter' },
-    { image: github, link: 'https://github.com/leonardolouie', imageAlt: 'github' },
-    { image: facebook, link: 'https://facebook.com/leonardolouie30', imageAlt: 'facebook' },
-    {
-      image: linkedin,
-      link: 'https://www.linkedin.com/in/leonardo-louie-ordo%C3%B1ez-940673176/',
-      imageAlt: 'linkedin'
-    }
-  ],
   description: 'Email: leonardolouie30@gmail.com'
 }
 
+const socials = [
+  { image: twitter, link: 'https://twitter.com/louieofficial30', imageAlt: 'twitter' },
+  { image: instagram, link: 'https://instagram.com/leonardolouie', imageAlt: 'twitter' },
+  { image: github, link: 'https://github.com/leonardolouie', imageAlt: 'github' },
+  { image: facebook, link: 'https://facebook.com/leonardolouie30', imageAlt: 'facebook' },
+  {
+    image: linkedin,
+    link: 'https://www.linkedin.com/in/leonardo-louie-ordo%C3%B1ez-940673176/',
+    imageAlt: 'linkedin'
+  }
+]
 
 //For SEO
-const keywords= ['web developer', 'freelancer']
-const image= {src:Logo , alt:'leonardo louie logo'}
+const keywords = ['web developer', 'freelancer']
+const image = { src: Logo, alt: 'leonardo louie logo' }
 
 const IndexPage = ({ data }) => {
   const { projects } = data
   return (
     <>
-      <Layout 
-        title={'Leonardo Louie | Software Engineer'} 
-        description={'Web Developer Leonardo Louie'} 
+      <Layout
+        title={'Leonardo Louie | Software Engineer'}
+        description={'Web Developer Leonardo Louie'}
         image={image}
-        keywords={keywords}>
+        keywords={keywords}
+      >
         <Section style={'background__svg-random'} flexType={'col'}>
           <Hero
             title={'Hi I am Leonardo Louie'}
             body={
               'This is Leonardo Louie Ordoñez currently working as Software Engineer at Unosoft Labs. I am full stack developer which is aim to design the product until it is delivered to the user. Besides, I’m fond of making websites and mobile app: specialize on JAMSTACK (Static Site).'
             }
-          ></Hero>
+            social={socials}
+          />
         </Section>
         <Section
           title="PROJECTS AND WORKS"

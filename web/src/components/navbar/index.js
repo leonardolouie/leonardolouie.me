@@ -12,11 +12,11 @@ export default function navbar() {
 
   return (
     <header className="bg-primary text-white font-bold">
-      <div className="py-12 px-5 md:flex justify-between md:px-10 container mx-auto">
-        <div className="flex justify-between">
+      <div className="py-5 px-5 md:flex justify-between items-center md:px-10 container mx-auto">
+        <div className="flex justify-between items-center">
           <div>
             <AniLink duration={0.7} paintDrip hex="#252627" to={'/'}>
-              <img className="w-10" src={Logo}/>
+              <img className="w-20 h-20" src={Logo} />
             </AniLink>
           </div>
           <div>

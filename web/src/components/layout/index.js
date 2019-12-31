@@ -5,17 +5,17 @@ import PropTypes from 'prop-types'
 import SiteHelmet from './siteHelmet'
 
 export default function Layout(props) {
-  const {children } = props
+  const { children } = props
   return (
     <>
       <SiteHelmet {...props} />
       <Navbar />
-        {children} 
+      {children}
       <Footer />
     </>
   )
 }
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  title:PropTypes.string
+  title: PropTypes.string
 }

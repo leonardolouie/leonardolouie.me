@@ -5,7 +5,7 @@ import Image from 'gatsby-image'
 export default function Cards({ title, image, imageAlt, description, techTags, url }) {
   return (
     <div className="mb-10 max-w-xs rounded-lg overflow-hidden shadow-2xl  mx-4 lg:mx-10 my-2 bg-primary">
-      <div className="w-full opacity-100 hover:opacity-25">
+      <div className="w-full">
         <Image fluid={image} alt={imageAlt} />
       </div>
       <div className="mt-5 sm:px-6 sm:py-4">
