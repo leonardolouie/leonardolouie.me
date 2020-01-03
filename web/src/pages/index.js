@@ -81,17 +81,16 @@ const socials = [
   }
 ]
 
-//For SEO
-const keywords = ['web developer', 'freelancer']
 const image = { src: Logo, alt: 'leonardo louie logo' }
 
 const IndexPage = ({ data }) => {
-  const { projects } = data
+  const { projects, siteSettings } = data
+  const {keywords, title, description } = siteSettings
   return (
     <>
       <Layout
-        title={'Leonardo Louie | Software Engineer'}
-        description={'Web Developer Leonardo Louie'}
+        title={title}
+        description={description}
         image={image}
         keywords={keywords}
       >
@@ -192,6 +191,11 @@ export const query = graphql`
           }
         }
       }
+    }
+    siteSettings: sanitySiteSettings {
+        description
+        keywords
+        title
     }
   }
 `
