@@ -19,7 +19,7 @@ const SiteHelmet = ({ title, keywords, description, image, author, name, icon })
       {image && <meta property="og:image:alt" content={image.alt} />}
       {title && <meta name="twitter:title" content={title} />}
       {description && <meta name="twitter:description" content={description} />}
-      {image && <meta name="twitter:image" content={`https:${image.asset.fluid.src}`} />}
+      {image && <meta name="twitter:image" content={image.asset.fluid.src} />}
       {image && <meta name="twitter:image:alt" content={image.alt} />}
       {author && <meta property="article:author" content={author} />}
       {name && <meta property="og:site_name" content={'leonardo-louie.me'} />}
