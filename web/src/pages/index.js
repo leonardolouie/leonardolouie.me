@@ -103,6 +103,13 @@ const IndexPage = ({ data }) => {
             social={socials}
           />
         </Section>
+       
+        <Section
+          title="TECH STACK"
+          subtitle="I've started my web development career by using Laravel PHP, CSS and JQUERY. As of the moment, I’m working for a year with lots of technologies encountered and used for the projects I made. In addition to that, I have learned more frameworks of JS such as Node and React. While, for DevOps part, I am currently using Heroku, Netlify and some services on AWS."
+        >
+          <LogoList logolistItem={LogoListItem} />
+        </Section>
         <Section
           title="PROJECTS AND WORKS"
           subtitle="Below are samples of my previous works and ongoing projects made by progressive programming languages in the world"
@@ -122,13 +129,6 @@ const IndexPage = ({ data }) => {
               />
             )
           })}
-        </Section>
-
-        <Section
-          title="TECH STACK"
-          subtitle="I've started my web development career by using Laravel PHP, CSS and JQUERY. As of the moment, I’m working for a year with lots of technologies encountered and used for the projects I made. In addition to that, I have learned more frameworks of JS such as Node and React. While, for DevOps part, I am currently using Heroku, Netlify and some services on AWS."
-        >
-          <LogoList logolistItem={LogoListItem} />
         </Section>
 
         <Section
