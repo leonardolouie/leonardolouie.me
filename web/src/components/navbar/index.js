@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import hamburger from 'images/bars-solid.svg'
-import Logo from '../../images/mylogo.png'
-export default function navbar() {
+import PropTypes from 'prop-types'
+
+
+
+export default function navbar({icon}) {
   const [isOpen, setOpen] = useState(false)
   const handleOpen = () => {
     setOpen(!isOpen)
@@ -20,7 +23,7 @@ export default function navbar() {
         <div className="flex justify-between items-center">
           <div>
             <AniLink duration={0.7} paintDrip hex="#252627" to={'/'}>
-              <img className="w-20 h-20" src={Logo} />
+              {icon && <img className="w-20 h-20" src={icon.asset.fluid.src} /> }
             </AniLink>
           </div>
           <div>
@@ -44,4 +47,8 @@ export default function navbar() {
       </div>
     </header>
   )
+}
+
+navbar.propTypes = {
+  icon:PropTypes.object
 }

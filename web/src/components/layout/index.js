@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 import SiteHelmet from './siteHelmet'
 
 export default function Layout(props) {
-  const { children } = props
+  const { children, icon } = props
   return (
     <>
       <SiteHelmet {...props} />
-      <Navbar />
+      <Navbar icon={icon}/>
       {children}
       <Footer />
     </>
@@ -17,5 +17,6 @@ export default function Layout(props) {
 }
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string
+  title: PropTypes.string, 
+  icon:PropTypes.object
 }

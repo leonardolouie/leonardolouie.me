@@ -22,8 +22,6 @@ import github from 'images/github-alt-brands.svg'
 import facebook from 'images/facebook-.svg'
 import linkedin from 'images/linkedin-brands.svg'
 
-import Logo from '../images/mylogo.png'
-
 const LogoListItem = [
   {
     image: gatsby,
@@ -81,11 +79,11 @@ const socials = [
   }
 ]
 
-const image = { src: Logo, alt: 'leonardo louie logo' }
+
 
 const IndexPage = ({ data }) => {
   const { projects, siteSettings } = data
-  const {keywords, title, description } = siteSettings
+  const {keywords, title, description, icon, image, author } = siteSettings
   return (
     <>
       <Layout
@@ -93,6 +91,8 @@ const IndexPage = ({ data }) => {
         description={description}
         image={image}
         keywords={keywords}
+        author={author}
+        icon={icon}
       >
         <Section style={'background__svg-random'} flexType={'col'}>
           <Hero
@@ -162,7 +162,7 @@ export const query = graphql`
               fluid {
                 base64
                 aspectRatio
-                src
+              src
                 srcSet
                 srcWebp
                 srcSetWebp
@@ -193,9 +193,28 @@ export const query = graphql`
       }
     }
     siteSettings: sanitySiteSettings {
-        description
-        keywords
-        title
+      description
+      keywords
+      title
+      author
+      icon{
+        caption
+        alt
+        asset {
+         fluid {   
+         src       
+          }
+        }
+      }
+      image{
+        caption
+        alt
+        asset {
+         fluid {   
+         src       
+          }
+        }
+      }
     }
   }
 `
