@@ -6,6 +6,7 @@ import Cards from 'components/cards'
 import ProfileCard from 'components/profileCard'
 import LogoList from 'components/logoList'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 import node from 'images/nodejslogo.png'
 import gatsby from 'images/gatsby.png'
 import laravel from 'images/laravel.png'
@@ -63,49 +64,79 @@ const profilecard = {
   name: 'Leonardo Louie Ordonez',
   job: 'Software Engineer @ Unosoft Labs',
   location: 'Manila PH',
-  social: [
-    { image: twitter, link: 'https://twitter.com/louieofficial30', imageAlt: 'twitter' },
-    { image: instagram, link: 'https://instagram.com/leonardolouie', imageAlt: 'twitter' },
-    { image: github, link: 'https://github.com/leonardolouie', imageAlt: 'github' },
-    { image: facebook, link: 'https://facebook.com/leonardolouie30', imageAlt: 'facebook' },
-    {
-      image: linkedin,
-      link: 'https://www.linkedin.com/in/leonardo-louie-ordo%C3%B1ez-940673176/',
-      imageAlt: 'linkedin'
-    }
-  ],
   description: 'Email: leonardolouie30@gmail.com'
 }
+
+const socials = [
+  { image: twitter, link: 'https://twitter.com/louieofficial30', imageAlt: 'twitter' },
+  { image: instagram, link: 'https://instagram.com/leonardolouie', imageAlt: 'twitter' },
+  { image: github, link: 'https://github.com/leonardolouie', imageAlt: 'github' },
+  { image: facebook, link: 'https://facebook.com/leonardolouie30', imageAlt: 'facebook' },
+  {
+    image: linkedin,
+    link: 'https://www.linkedin.com/in/leonardo-louie-ordo%C3%B1ez-940673176/',
+    imageAlt: 'linkedin'
+  }
+]
+
 const IndexPage = ({ data }) => {
-  const { projects } = data
+  const { projects, siteSettings, blogs } = data
+  const { keywords, title, description, icon, image, author } = siteSettings
   return (
     <>
-      <Layout>
-        <Section style={'background__svg-random'}>
+      <Layout title={title} description={description} image={image} keywords={keywords} author={author} icon={icon}>
+        <Section style={'background__svg-random'} flexType={'col'}>
           <Hero
-            title={'Software Engineer + Music Enthusiast'}
+            title={'Hi I am Leonardo Louie'}
             body={
               'This is Leonardo Louie Ordoñez currently working as Software Engineer at Unosoft Labs. I am full stack developer which is aim to design the product until it is delivered to the user. Besides, I’m fond of making websites and mobile app: specialize on JAMSTACK (Static Site).'
             }
-          ></Hero>
+            subTitle={'FullStack Developer/ Music Enthusiast / Devops Engineer'}
+            social={socials}
+          />
         </Section>
+
         <Section
           title="PROJECTS AND WORKS"
           subtitle="Below are samples of my previous works and ongoing projects made by progressive programming languages in the world"
           bottomTitle="See more ?"
           bottomTitleLink={'/project'}
         >
-          {projects.edges.map((value, key) => (
-            <Cards
-              url={value.node.url}
-              title={value.node.title}
-              image={value.node.image.asset.fluid}
-              imageAlt={value.node.image.caption}
-              description={value.node.description}
-              techTags={value.node.techUsed}
-              key={key}
-            />
-          ))}
+          {projects && projects.edges.map((value, key) => {
+            return (
+              <Cards
+                url={value.node.url}
+                title={value.node.title}
+                image={value.node.image.asset.fluid}
+                imageAlt={value.node.image.caption}
+                description={value.node.description}
+                type={'projects'}
+                slug={value.node.slug.current}
+                key={key}
+              />
+            )
+          })}
+        </Section>
+
+        <Section
+          title="BLOGS"
+          subtitle="Alive and grateful"
+          bottomTitle="See more ?"
+          bottomTitleLink={'/blog'}
+        >
+          {blogs && blogs.edges.map((value, key) => {
+            return (
+              <Cards
+                title={value.node.title}
+                image={value.node.image.asset.fluid}
+                imageAlt={value.node.image.caption}
+                description={value.node.description}
+                type={'blogs'}
+                slug={value.node.slug.current}
+                key={key}
+              />
+            )
+          })}
         </Section>
 
         <Section
@@ -128,11 +159,18 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage
 
+IndexPage.propTypes = {
+  data: PropTypes.object
+}
+
 export const query = graphql`
   query ProjectQuery {
-    projects: allSanityProject(filter: { show: { eq: true } }, limit: 6) {
+    projects: allSanityProject(filter: { show: { eq: true } }, limit: 3) {
       edges {
         node {
+          slug {
+            current
+          }
           title
           description
           url
@@ -150,7 +188,6 @@ export const query = graphql`
               }
             }
           }
-          description
           techUsed {
             site
             name
@@ -168,6 +205,50 @@ export const query = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+    blogs:allSanityBlog (filter: { show: { eq: true } }){
+      edges {
+        node {
+           title
+           description
+           keywords
+            slug {
+              current
+            }
+            image {
+              caption
+              asset {
+                fluid {
+                  src
+                }
+              }
+            }
+        }
+      }
+    }
+    siteSettings: sanitySiteSettings {
+      description
+      keywords
+      title
+      author
+      icon {
+        caption
+        alt
+        asset {
+          fluid {
+            src
+          }
+        }
+      }
+      image {
+        caption
+        alt
+        asset {
+          fluid {
+            src
           }
         }
       }

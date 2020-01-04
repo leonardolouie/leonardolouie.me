@@ -3,22 +3,27 @@ import { graphql } from 'gatsby'
 import Layout from 'components/layout'
 import Section from 'components/section'
 import Post from 'components/post'
+import PropTypes from 'prop-types'
 
+const ProjecTemplate = ({ data }) => {
+  const { projects, siteSettings } = data
+  const { icon, author } = siteSettings
 
-export default function ProjecTemplate({ data }) {
-  const {
-    projects
-  } = data
-
-
+  const { title, description, keywords, image } = projects
 
   return (
-    <Layout>
+    <Layout icon={icon} image={image} author={author} title={title} description={description} keywords={keywords}>
       <Section flexType={'col'}>
-         <Post {...projects} />
+        <Post {...projects} />
       </Section>
     </Layout>
   )
+}
+
+export default ProjecTemplate
+
+ProjecTemplate.propTypes = {
+  data: PropTypes.object
 }
 
 export const query = graphql`
@@ -26,11 +31,13 @@ export const query = graphql`
     projects: sanityProject(show: { eq: true }, slug: { current: { eq: $slug } }) {
       title
       description
+      keywords
       url
       _rawBody
       publishedAt(fromNow: true)
       image {
         caption
+        alt
         asset {
           fluid {
             base64
@@ -58,6 +65,22 @@ export const query = graphql`
               srcSetWebp
               sizes
             }
+          }
+        }
+      }
+    }
+
+    siteSettings: sanitySiteSettings {
+      description
+      keywords
+      title
+      author
+      icon {
+        caption
+        alt
+        asset {
+          fluid {
+            src
           }
         }
       }
