@@ -120,7 +120,7 @@ const IndexPage = ({ data }) => {
 
         <Section
           title="BLOGS"
-          subtitle="Below are samples of my previous works and ongoing projects made by progressive programming languages in the world"
+          subtitle="Alive and grateful"
           bottomTitle="See more ?"
           bottomTitleLink={'/blog'}
         >
