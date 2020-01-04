@@ -21,11 +21,6 @@ export default {
       }
     },
     {
-      name: 'url',
-      type: 'url',
-      title: 'Site Url'
-    },
-    {
       name: 'publishedAt',
       title: 'Published at',
       description: 'You can use this field to schedule projects where you show them',
@@ -45,6 +40,16 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'projectPortableText'
+    },
+    {
+      name: 'keywords',
+      type: 'array',
+      title: 'Keywords',
+      description: 'Add keywords that describes your project  .',
+      of: [{type: 'string'}],
+      options: {
+        layout: 'tags'
+      }
     },
     {
       title: 'Show this Blog ?',

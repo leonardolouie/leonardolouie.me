@@ -80,7 +80,7 @@ const socials = [
 ]
 
 const IndexPage = ({ data }) => {
-  const { projects, siteSettings } = data
+  const { projects, siteSettings, blogs } = data
   const { keywords, title, description, icon, image, author } = siteSettings
   return (
     <>
@@ -91,6 +91,7 @@ const IndexPage = ({ data }) => {
             body={
               'This is Leonardo Louie Ordoñez currently working as Software Engineer at Unosoft Labs. I am full stack developer which is aim to design the product until it is delivered to the user. Besides, I’m fond of making websites and mobile app: specialize on JAMSTACK (Static Site).'
             }
+            subTitle={'FullStack Developer/ Music Enthusiast / Devops Engineer'}
             social={socials}
           />
         </Section>
@@ -101,7 +102,7 @@ const IndexPage = ({ data }) => {
           bottomTitle="See more ?"
           bottomTitleLink={'/project'}
         >
-          {projects.edges.map((value, key) => {
+          {projects && projects.edges.map((value, key) => {
             return (
               <Cards
                 url={value.node.url}
@@ -110,6 +111,27 @@ const IndexPage = ({ data }) => {
                 imageAlt={value.node.image.caption}
                 description={value.node.description}
                 type={'projects'}
+                slug={value.node.slug.current}
+                key={key}
+              />
+            )
+          })}
+        </Section>
+
+        <Section
+          title="BLOGS"
+          subtitle="Below are samples of my previous works and ongoing projects made by progressive programming languages in the world"
+          bottomTitle="See more ?"
+          bottomTitleLink={'/blog'}
+        >
+          {blogs && blogs.edges.map((value, key) => {
+            return (
+              <Cards
+                title={value.node.title}
+                image={value.node.image.asset.fluid}
+                imageAlt={value.node.image.caption}
+                description={value.node.description}
+                type={'blogs'}
                 slug={value.node.slug.current}
                 key={key}
               />
@@ -143,7 +165,7 @@ IndexPage.propTypes = {
 
 export const query = graphql`
   query ProjectQuery {
-    projects: allSanityProject(filter: { show: { eq: true } }, limit: 6) {
+    projects: allSanityProject(filter: { show: { eq: true } }, limit: 3) {
       edges {
         node {
           slug {
@@ -166,7 +188,6 @@ export const query = graphql`
               }
             }
           }
-          description
           techUsed {
             site
             name
@@ -185,6 +206,26 @@ export const query = graphql`
               }
             }
           }
+        }
+      }
+    }
+    blogs:allSanityBlog (filter: { show: { eq: true } }){
+      edges {
+        node {
+           title
+           description
+           keywords
+            slug {
+              current
+            }
+            image {
+              caption
+              asset {
+                fluid {
+                  src
+                }
+              }
+            }
         }
       }
     }

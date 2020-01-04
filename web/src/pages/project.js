@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from 'components/layout'
 import Section from 'components/section'
-import SingleColumn from 'components/singleColumn'
 import { graphql } from 'gatsby'
+import Cards from 'components/cards'
 import PropTypes from 'prop-types'
 
 const ProjectPage = ({ data }) => {
@@ -23,14 +23,18 @@ const ProjectPage = ({ data }) => {
         author={author}
         icon={icon}
       >
-        <Section title="RECENT PROJECTS AND WORKS" flexType={'col'}>
+        <Section title="RECENT PROJECTS AND WORKS">
           {edges &&
             edges.map((value, key) => {
               return (
-                <SingleColumn
+                <Cards
+                  url={value.node.url}
                   title={value.node.title}
-                  slug={value.node.slug}
+                  image={value.node.image.asset.fluid}
+                  imageAlt={value.node.image.caption}
                   description={value.node.description}
+                  type={'projects'}
+                  slug={value.node.slug.current}
                   key={key}
                 />
               )
@@ -66,7 +70,6 @@ export const query = graphql`
               }
             }
           }
-          description
           techUsed {
             site
             name

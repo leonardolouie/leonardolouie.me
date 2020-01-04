@@ -1,8 +1,8 @@
 /* eslint-disable react/display-name */
-import React, { useState } from 'react'
+import React from 'react'
 import { urlFor } from '../../helpers/util.ts'
 import BlockContent from '@sanity/block-content-to-react'
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
+
 import Loader from 'react-loader-spinner'
 import Button from '../button'
 import PropTypes from 'prop-types'
@@ -39,8 +39,6 @@ const serializers = {
 
 const Post = ({ title, publishedAt, url, description, _rawBody, keywords }) => {
 
-
-  
  
   return (
     <>
