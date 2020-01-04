@@ -99,44 +99,39 @@ const IndexPage = ({ data }) => {
         <Section
           title="PROJECTS AND WORKS"
           subtitle="Below are samples of my previous works and ongoing projects made by progressive programming languages in the world"
-          bottomTitle="See more ?"
-          bottomTitleLink={'/project'}
         >
-          {projects && projects.edges.map((value, key) => {
-            return (
-              <Cards
-                url={value.node.url}
-                title={value.node.title}
-                image={value.node.image.asset.fluid}
-                imageAlt={value.node.image.caption}
-                description={value.node.description}
-                type={'projects'}
-                slug={value.node.slug.current}
-                key={key}
-              />
-            )
-          })}
+          {projects &&
+            projects.edges.map((value, key) => {
+              return (
+                <Cards
+                  url={value.node.url}
+                  title={value.node.title}
+                  image={value.node.image.asset.fluid}
+                  imageAlt={value.node.image.caption}
+                  description={value.node.description}
+                  type={'project'}
+                  slug={value.node.slug.current}
+                  key={key}
+                />
+              )
+            })}
         </Section>
 
-        <Section
-          title="BLOGS"
-          subtitle="Alive and grateful"
-          bottomTitle="See more ?"
-          bottomTitleLink={'/blog'}
-        >
-          {blogs && blogs.edges.map((value, key) => {
-            return (
-              <Cards
-                title={value.node.title}
-                image={value.node.image.asset.fluid}
-                imageAlt={value.node.image.caption}
-                description={value.node.description}
-                type={'blogs'}
-                slug={value.node.slug.current}
-                key={key}
-              />
-            )
-          })}
+        <Section title="BLOGS" subtitle="My daily routines, coding lessons is here">
+          {blogs &&
+            blogs.edges.map((value, key) => {
+              return (
+                <Cards
+                  title={value.node.title}
+                  image={value.node.image.asset.fluid}
+                  imageAlt={value.node.image.caption}
+                  description={value.node.description}
+                  type={'blog'}
+                  slug={value.node.slug.current}
+                  key={key}
+                />
+              )
+            })}
         </Section>
 
         <Section
@@ -209,23 +204,23 @@ export const query = graphql`
         }
       }
     }
-    blogs:allSanityBlog (filter: { show: { eq: true } }){
+    blogs: allSanityBlog(filter: { show: { eq: true } }) {
       edges {
         node {
-           title
-           description
-           keywords
-            slug {
-              current
-            }
-            image {
-              caption
-              asset {
-                fluid {
-                  src
-                }
+          title
+          description
+          keywords
+          slug {
+            current
+          }
+          image {
+            caption
+            asset {
+              fluid {
+                src
               }
             }
+          }
         }
       }
     }

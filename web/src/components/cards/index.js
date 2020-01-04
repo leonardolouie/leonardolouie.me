@@ -11,7 +11,7 @@ export default function Cards({ title, image, imageAlt, description, url, slug, 
         {url != undefined ? (
           <a href={url}>
             <h1 data-tip data-for={url} className="cards__title">
-              {title}{' '}
+              {title}
             </h1>
             <ReactTooltip id={url} type="light">
               <span>{url}</span>
