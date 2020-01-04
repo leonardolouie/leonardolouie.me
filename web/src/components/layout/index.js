@@ -9,7 +9,7 @@ export default function Layout(props) {
   return (
     <>
       <SiteHelmet {...props} />
-      <Navbar icon={icon}/>
+      <Navbar icon={icon} />
       {children}
       <Footer />
     </>
@@ -17,6 +17,6 @@ export default function Layout(props) {
 }
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string, 
-  icon:PropTypes.object
+  title: PropTypes.string,
+  icon: PropTypes.object
 }

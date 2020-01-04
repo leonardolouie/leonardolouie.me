@@ -1,0 +1,90 @@
+
+.cards__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+        
+}
+
+.cards__button {
+        padding: 0.6rem;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        background: white;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.4s ease;
+        border-radius: 20px;
+        margin-top: 10px;
+
+
+}
+
+
+.card__info {
+    position: relative;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
+   
+}
+
+ .cards__title {
+        margin: 0px;
+        font-size: 18px;
+    }
+.cards__paragraph {
+        letter-spacing: 1px;
+        font-size: 15px;
+        margin-bottom: 5px;
+ }
+
+.cards {
+  border-radius: 15px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 250px;
+  padding: 1.5rem;
+  background: #252628;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: 0.4s ease-out;
+  margin:10px;
+  
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: #252628;
+    z-index: 2;
+    transition: 0.5s;
+    opacity: 0;
+}
+   
+   &:hover {
+	  transform: translateY(10px);
+	 &:before {
+            opacity: 1;
+        }
+	  .card__info {
+			opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+        
+}

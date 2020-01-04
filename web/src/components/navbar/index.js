@@ -3,27 +3,21 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import hamburger from 'images/bars-solid.svg'
 import PropTypes from 'prop-types'
 
-
-
-export default function navbar({icon}) {
+export default function navbar({ icon }) {
   const [isOpen, setOpen] = useState(false)
   const handleOpen = () => {
     setOpen(!isOpen)
   }
 
-  const navBar = [
-    { name: 'blogs', link: 'blog' },
-    { name: 'projects', link: 'project' },
-    { name: 'contact', link: 'contact' }
-  ]
+  const navBar = [{ name: 'projects', link: 'project' }, { name: 'blogs', link: 'blog' }]
 
   return (
     <header className="bg-primary text-white font-bold">
-      <div className="py-5 px-5 md:flex justify-between items-center md:px-10 container mx-auto">
+      <div className="py-5 px-5 md:flex justify-between items-center md:px-1 container mx-auto">
         <div className="flex justify-between items-center">
           <div>
             <AniLink duration={0.7} paintDrip hex="#252627" to={'/'}>
-              {icon && <img className="w-20 h-20" src={icon.asset.fluid.src} /> }
+              {icon && <img className="w-20 h-20" src={icon.asset.fluid.src} />}
             </AniLink>
           </div>
           <div>
@@ -50,5 +44,5 @@ export default function navbar({icon}) {
 }
 
 navbar.propTypes = {
-  icon:PropTypes.object
+  icon: PropTypes.object
 }

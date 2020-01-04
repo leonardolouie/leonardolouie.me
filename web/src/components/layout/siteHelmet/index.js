@@ -2,12 +2,11 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 
-
 const SiteHelmet = ({ title, keywords, description, image, author, name, icon }) => {
   const twitterUsername = '@louieofficial30'
   return (
     <Helmet>
-      {icon  &&<link rel="icon" type="image/png" href={icon.asset.fluid.src} /> }
+      {icon && <link rel="icon" type="image/png" href={icon.asset.fluid.src} />}
       {title && <title>{title}</title>}
       {keywords && <meta name="keywords" content={keywords} />}
       {twitterUsername && <meta name="twitter:site" content={twitterUsername} />}
@@ -37,7 +36,7 @@ SiteHelmet.propTypes = {
   description: PropTypes.string,
   keywords: PropTypes.array,
   image: PropTypes.object,
-  author: PropTypes.string, 
-  name:PropTypes.string, 
-  icon: PropTypes.object,
+  author: PropTypes.string,
+  name: PropTypes.string,
+  icon: PropTypes.object
 }

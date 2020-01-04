@@ -5,12 +5,15 @@ import LogoList from '../logoList'
 export default function Hero({ title, body, buttonTitle, social }) {
   return (
     <div className="flex flex-col md:my-32">
-      <h1 className="text-white mb-2 text-3xl sm:text-5xl uppercase">{title}</h1>
+      <h1 className="text-white text-center sm:text-left mb-2 text-3xl sm:text-5xl uppercase">{title}</h1>
       <div>
-        <p className="text-dim sm:text-2xl mt-5 mb-5"> Mobile Developer / Web Developer / Freelancer </p>
+        <p className="text-dim  text-center sm:text-left  sm:text-2xl mt-5 mb-5">
+          {' '}
+          Mobile Developer / Web Developer / Freelancer{' '}
+        </p>
       </div>
       <div className="mx-auto ">
-        <p className="text-dim  text-xl">{body}</p>
+        <p className="text-dim  text-center sm:text-left  text-xl">{body}</p>
         {buttonTitle && (
           <button className="bg-white hover:bg-dim text-primary font-bold py-2 px-4 rounded-full">{buttonTitle}</button>
         )}

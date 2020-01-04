@@ -7,12 +7,22 @@ import PropTypes from 'prop-types'
 
 const ProjectPage = ({ data }) => {
   const {
+    siteSettings,
     projects: { edges }
   } = data
 
+  const { keywords, description, icon, image, author } = siteSettings
+
   return (
     <>
-      <Layout>
+      <Layout
+        title={'Leonardo Louie | Projects'}
+        description={description}
+        image={image}
+        keywords={keywords}
+        author={author}
+        icon={icon}
+      >
         <Section title="RECENT PROJECTS AND WORKS" flexType={'col'}>
           {edges &&
             edges.map((value, key) => {
@@ -68,6 +78,30 @@ export const query = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+    siteSettings: sanitySiteSettings {
+      description
+      keywords
+      title
+      author
+      icon {
+        caption
+        alt
+        asset {
+          fluid {
+            src
+          }
+        }
+      }
+      image {
+        caption
+        alt
+        asset {
+          fluid {
+            src
           }
         }
       }

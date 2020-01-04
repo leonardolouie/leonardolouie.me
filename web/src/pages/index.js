@@ -79,21 +79,12 @@ const socials = [
   }
 ]
 
-
-
 const IndexPage = ({ data }) => {
   const { projects, siteSettings } = data
-  const {keywords, title, description, icon, image, author } = siteSettings
+  const { keywords, title, description, icon, image, author } = siteSettings
   return (
     <>
-      <Layout
-        title={title}
-        description={description}
-        image={image}
-        keywords={keywords}
-        author={author}
-        icon={icon}
-      >
+      <Layout title={title} description={description} image={image} keywords={keywords} author={author} icon={icon}>
         <Section style={'background__svg-random'} flexType={'col'}>
           <Hero
             title={'Hi I am Leonardo Louie'}
@@ -103,13 +94,7 @@ const IndexPage = ({ data }) => {
             social={socials}
           />
         </Section>
-       
-        <Section
-          title="TECH STACK"
-          subtitle="I've started my web development career by using Laravel PHP, CSS and JQUERY. As of the moment, I’m working for a year with lots of technologies encountered and used for the projects I made. In addition to that, I have learned more frameworks of JS such as Node and React. While, for DevOps part, I am currently using Heroku, Netlify and some services on AWS."
-        >
-          <LogoList logolistItem={LogoListItem} />
-        </Section>
+
         <Section
           title="PROJECTS AND WORKS"
           subtitle="Below are samples of my previous works and ongoing projects made by progressive programming languages in the world"
@@ -124,11 +109,19 @@ const IndexPage = ({ data }) => {
                 image={value.node.image.asset.fluid}
                 imageAlt={value.node.image.caption}
                 description={value.node.description}
-                techTags={value.node.techUsed}
+                type={'projects'}
+                slug={value.node.slug.current}
                 key={key}
               />
             )
           })}
+        </Section>
+
+        <Section
+          title="TECH STACK"
+          subtitle="I've started my web development career by using Laravel PHP, CSS and JQUERY. As of the moment, I’m working for a year with lots of technologies encountered and used for the projects I made. In addition to that, I have learned more frameworks of JS such as Node and React. While, for DevOps part, I am currently using Heroku, Netlify and some services on AWS."
+        >
+          <LogoList logolistItem={LogoListItem} />
         </Section>
 
         <Section
@@ -153,6 +146,9 @@ export const query = graphql`
     projects: allSanityProject(filter: { show: { eq: true } }, limit: 6) {
       edges {
         node {
+          slug {
+            current
+          }
           title
           description
           url
@@ -162,7 +158,7 @@ export const query = graphql`
               fluid {
                 base64
                 aspectRatio
-              src
+                src
                 srcSet
                 srcWebp
                 srcSetWebp
@@ -197,21 +193,21 @@ export const query = graphql`
       keywords
       title
       author
-      icon{
+      icon {
         caption
         alt
         asset {
-         fluid {   
-         src       
+          fluid {
+            src
           }
         }
       }
-      image{
+      image {
         caption
         alt
         asset {
-         fluid {   
-         src       
+          fluid {
+            src
           }
         }
       }
