@@ -2,9 +2,8 @@
 import React from 'react'
 import { urlFor } from '../../helpers/util.ts'
 import BlockContent from '@sanity/block-content-to-react'
-
 import Loader from 'react-loader-spinner'
-import Button from '../button'
+import Button from 'components/button'
 import PropTypes from 'prop-types'
 
 const serializers = {
@@ -18,7 +17,7 @@ const serializers = {
     },
     figure: props => {
       return (
-        <div>
+        <div className="flex w-auto mt-2 mb-2 sm:w-auto justify-center">
           <figure>
             {props.node.asset && (
               <img
@@ -36,44 +35,37 @@ const serializers = {
   }
 }
 
-
 const Post = ({ title, publishedAt, url, description, _rawBody, keywords }) => {
-
- 
   return (
     <>
       {title ? (
-        <>
-          <h1 className="text-white text-3xl">{title && title}</h1>
-          <p className="text-dim mb-2">{publishedAt && publishedAt}</p>
-          {url && (
-            <a className="text-dim mb-2" href={url}>
-              {url}
-            </a>
-          )}
-          <p className="text-white mb-10 ">{description}</p>
-          {keywords && (
-            <div className="flex flex-row mb-10">
-              {keywords.map((value, index) => {
-                return <Button text={value} key={index} />
-              })}
-            </div>
-          )}
+        <div className="flex flex-col">
+          <div>
+            <h1 className="text-white  text-2xl sm:text-5xl">{title && title}</h1>
+            {description && <p className="text-white text-xl">{description}</p>}
+            <p className="text-dim mb-2">{publishedAt && publishedAt}</p>
+            {url && (
+              <a className="text-dim hover:text-white" href={url}>
+                {url}
+              </a>
+            )}
+            {keywords && (
+              <div className="flex mt-5 flex-row mb-10">
+                {keywords.map((value, index) => {
+                  return <Button text={value} key={index} />
+                })}
+              </div>
+            )}
+          </div>
           {_rawBody && (
-            <div className="shadow-lg py-10 px-10 text-justify">
+            <div className="text-justify">
               <BlockContent blocks={_rawBody} serializers={serializers} />
             </div>
           )}
-        </>
+        </div>
       ) : (
         <div className="flex items-center justify-center">
-          <Loader
-            type="Audio"
-            color="#545459"
-            height={150}
-            width={150}
-          />
-
+          <Loader type="Audio" color="#545459" height={150} width={150} />
         </div>
       )}
     </>

@@ -40,12 +40,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
   )
 
+  const BlogResult = await graphql(
+    `
+      query PageQuery {
+        allSanityBlog(filter: { show: { eq: true } }) {
+          edges {
+            node {
+              slug {
+                current
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+
   if (result.errors) {
     reporter.panicOnBuild('Error while running GraphQL query.')
     return
   }
 
   const projectTemplate = path.resolve('src/templates/project-template.js')
+  const blogTemplate = path.resolve('src/templates/blog-template.js')
 
   result.data.allSanityProject.edges.map(value => {
     const {
@@ -53,10 +70,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         slug: { current }
       }
     } = value
-    const path = `projects/${current}`
+    const path = `project/${current}`
     createPage({
       path,
       component: projectTemplate,
+      context: {
+        slug: current
+      }
+    })
+  })
+
+  BlogResult.data.allSanityBlog.edges.map(value => {
+    const {
+      node: {
+        slug: { current }
+      }
+    } = value
+    const path = `blog/${current}`
+    createPage({
+      path,
+      component: blogTemplate,
       context: {
         slug: current
       }

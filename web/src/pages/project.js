@@ -2,8 +2,8 @@ import React from 'react'
 import Layout from 'components/layout'
 import Section from 'components/section'
 import { graphql } from 'gatsby'
-import Cards from 'components/cards'
 import PropTypes from 'prop-types'
+import SingleColumn from '../components/singleColumn'
 
 const ProjectPage = ({ data }) => {
   const {
@@ -23,17 +23,18 @@ const ProjectPage = ({ data }) => {
         author={author}
         icon={icon}
       >
-        <Section title="RECENT PROJECTS AND WORKS">
+        <Section title="RECENT PROJECTS AND WORKS" flexType="col">
           {edges &&
             edges.map((value, key) => {
               return (
-                <Cards
+                <SingleColumn
                   url={value.node.url}
                   title={value.node.title}
                   image={value.node.image.asset.fluid}
                   imageAlt={value.node.image.caption}
                   description={value.node.description}
-                  type={'projects'}
+                  keywords={value.node.keywords}
+                  type={'project'}
                   slug={value.node.slug.current}
                   key={key}
                 />
@@ -58,6 +59,7 @@ export const query = graphql`
         node {
           title
           description
+          keywords
           url
           slug {
             current
@@ -66,7 +68,13 @@ export const query = graphql`
             caption
             asset {
               fluid {
+                base64
+                aspectRatio
                 src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
               }
             }
           }
@@ -77,7 +85,13 @@ export const query = graphql`
               caption
               asset {
                 fluid {
+                  base64
+                  aspectRatio
                   src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
                 }
               }
             }
@@ -95,7 +109,13 @@ export const query = graphql`
         alt
         asset {
           fluid {
+            base64
+            aspectRatio
             src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
           }
         }
       }
@@ -104,7 +124,13 @@ export const query = graphql`
         alt
         asset {
           fluid {
+            base64
+            aspectRatio
             src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
           }
         }
       }
