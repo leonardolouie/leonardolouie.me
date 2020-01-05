@@ -3,7 +3,7 @@ import React from 'react'
 import { urlFor } from '../../helpers/util.ts'
 import BlockContent from '@sanity/block-content-to-react'
 import Loader from 'react-loader-spinner'
-import Button from 'components/button'
+import Tag from 'components/tag'
 import PropTypes from 'prop-types'
 
 const serializers = {
@@ -52,7 +52,7 @@ const Post = ({ title, publishedAt, url, description, _rawBody, keywords }) => {
             {keywords && (
               <div className="flex mt-5 flex-row mb-10">
                 {keywords.map((value, index) => {
-                  return <Button text={value} key={index} />
+                  return <Tag text={value} key={index} />
                 })}
               </div>
             )}

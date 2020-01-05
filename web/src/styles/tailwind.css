@@ -65,8 +65,9 @@ p, em, span,li {
   font-family: 'Segoe UI', sans-serif;
   font-style: normal;
 
-  @apply text-dim text-xl;
+  @apply text-dim;
 }
+
 
 /** animations**/
 @keyframes fadedInAnimation {
