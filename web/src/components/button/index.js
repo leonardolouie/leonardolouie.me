@@ -1,16 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-const Button = ({ text }) => {
+
+const  Button = ({text, link, type})=>  {
   return (
-    <span className="mb-2 inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-      #{text}
-    </span>
+  <>
+      {type === 'a' ? <a className="text-white bg-red hover:border-transparent" href={link}>{text}</a>  : 
+        <button  className="text-primary font-semibold bg-gray-200 rounded-full text-md w-auto py-1 px-4 hover:bg-dim uppercase"> <AniLink to={link} cover bg="#252627">   {text} </AniLink>  </button>}
+  </>
   )
 }
 
+
 export default Button
 
+
 Button.propTypes = {
-  text: PropTypes.string
+  text: PropTypes.string,
+  link:PropTypes.string,
+  type:PropTypes.oneOf(['a'])
+
 }
+  

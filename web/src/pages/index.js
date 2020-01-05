@@ -91,7 +91,7 @@ const IndexPage = ({ data }) => {
             body={
               'This is Leonardo Louie Ordoñez currently working as Software Engineer at Unosoft Labs. I am full stack developer which is aim to design the product until it is delivered to the user. Besides, I’m fond of making websites and mobile app: specialize on JAMSTACK (Static Site).'
             }
-            subTitle={'FullStack Developer/ Music Enthusiast / Devops Engineer'}
+            subTitle={'FullStack Developer/ Music Enthusiast / DevOps Engineer'}
             social={socials}
           />
         </Section>
