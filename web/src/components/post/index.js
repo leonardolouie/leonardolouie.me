@@ -17,7 +17,7 @@ const serializers = {
     },
     figure: props => {
       return (
-        <div className="flex w-auto mt-2 mb-2 sm:w-auto justify-center">
+        <div className="flex w-auto mt-10 mb-10 sm:w-auto justify-center">
           <figure>
             {props.node.asset && (
               <img

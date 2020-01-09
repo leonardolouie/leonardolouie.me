@@ -15,18 +15,24 @@ import tailwind from 'images/tailwind.png'
 import contentful from 'images/contentful.png'
 import sanity from 'images/sanity.png'
 import redux from 'images/redux.png'
+import vue from 'images/vue.png'
 
 import twitter from 'images/twitter-brands.svg'
 import instagram from 'images/instagram-brands.svg'
 import github from 'images/github-alt-brands.svg'
-import facebook from 'images/facebook-.svg'
 import linkedin from 'images/linkedin-brands.svg'
+import dribble from 'images/dribbble-brands.svg'
 
 const LogoListItem = [
   {
     image: gatsby,
     imageAlt: 'Gatsby Js',
     link: 'https://reactjs.org/'
+  },
+  {
+    image:vue,
+    imageAlt:'vue js',
+    link:'https://vuejs.org/'
   },
   {
     image: node,
@@ -68,10 +74,23 @@ const profilecard = {
 }
 
 const socials = [
-  { image: twitter, link: 'https://twitter.com/louieofficial30', imageAlt: 'twitter' },
-  { image: instagram, link: 'https://instagram.com/leonardolouie', imageAlt: 'twitter' },
-  { image: github, link: 'https://github.com/leonardolouie', imageAlt: 'github' },
-  { image: facebook, link: 'https://facebook.com/leonardolouie30', imageAlt: 'facebook' },
+  { image: twitter, 
+    link: 'https://twitter.com/louieofficial30', 
+    imageAlt: 'twitter' 
+  },
+
+  { image: instagram, 
+    link: 'https://instagram.com/leonardolouie',
+    imageAlt: 'twitter'
+  },
+  { image: github, 
+    link: 'https://github.com/leonardolouie', 
+    imageAlt: 'github' 
+  },
+  { image: dribble, 
+    link: 'https://dribbble.com/leonardolouie30', 
+    imageAlt: 'dribble' 
+  },
   {
     image: linkedin,
     link: 'https://www.linkedin.com/in/leonardo-louie-ordo%C3%B1ez-940673176/',
@@ -89,14 +108,14 @@ const IndexPage = ({ data }) => {
           <Hero
             title={'Hi I am Leonardo Louie'}
             body={
-              'This is Leonardo Louie Ordoñez currently working as Software Engineer at Unosoft Labs. I am full stack developer which is aim to design the product until it is delivered to the user. Besides, I’m fond of making websites and mobile app: specialize on JAMSTACK (Static Site).'
+              'This is Leonardo Louie Ordoñez currently working as Software Engineer at Unosoft Labs. I am a full stack developer who aims to design the product until it is delivered to the user. Besides, I’m fond of making websites and mobile apps: specialize in JAMSTACK (Static Site).'
             }
             subTitle={'FullStack Developer/ Music Enthusiast / DevOps Engineer'}
             social={socials}
           />
         </Section>
 
-        <Section
+        {projects && <Section
           title="PROJECTS AND WORKS"
           subtitle="Below are samples of my previous works and ongoing projects made by progressive programming languages in the world"
         >
@@ -115,9 +134,9 @@ const IndexPage = ({ data }) => {
                 />
               )
             })}
-        </Section>
+        </Section> }
 
-        <Section title="BLOGS" subtitle="My daily routines, coding lessons is here">
+        {blogs && <Section title="BLOGS" subtitle="My daily routines, coding lessons is here">
           {blogs &&
             blogs.edges.map((value, key) => {
               return (
@@ -132,7 +151,7 @@ const IndexPage = ({ data }) => {
                 />
               )
             })}
-        </Section>
+        </Section> }
 
         <Section
           title="TECH STACK"
