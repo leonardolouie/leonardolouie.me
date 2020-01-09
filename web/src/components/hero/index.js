@@ -5,7 +5,7 @@ import LogoList from '../logoList'
 export default function Hero({ title, subTitle, body, buttonTitle, social }) {
   return (
     <div className="flex flex-col md:my-32">
-      <h1 className="text-white text-center sm:text-left mb-2 text-3xl sm:text-5xl uppercase">{title}</h1>
+      <h1 className="text-white text-center sm:text-left mb-2 text-3xl sm:text-6xl uppercase">{title}</h1>
       {subTitle && (
         <div>
           <p className="text-dim  text-center sm:text-left  sm:text-2xl mt-5 mb-5">{subTitle}</p>
