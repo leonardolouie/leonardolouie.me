@@ -4,9 +4,19 @@
 
 @tailwind utilities;
 
-body {
-  @apply bg-secondary;
+.dark-theme {
+  background-color: #292A2D;
+  
+  
 }
+
+
+.light-theme {
+  background-color: #fff;
+  
+}
+
+
 
 .logo {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
@@ -19,19 +29,36 @@ body {
 }  */
 
 
-h1,
-h2,
-h3,
-h4,
-h6,
-strong {
+
+
+.dark-theme > h1,
+.dark-theme > h2,
+.dark-theme > h3,
+.dark-theme > h4,
+.dark-theme > h6,
+.dark-theme > strong {
   font-family: roboto, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
 
 
   @apply text-white;
 }
+
+.light-theme > h1,
+.light-theme> h2,
+.light-theme> h3,
+.light-theme > h4,
+.light-theme > h6,
+.light-theme> strong {
+  font-family: roboto, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #252628 !important;
+}
+
+
+
 
 h1 { 
   @apply  text-4xl;
