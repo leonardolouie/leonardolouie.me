@@ -8,14 +8,6 @@ import PropTypes from 'prop-types'
 const ContactMe = ({ data }) => {
   const { siteSettings} = data
   const { keywords, description, icon, image, author } = siteSettings
-  const profilecard = {
-    name: 'Leonardo Louie Ordonez',
-    job: 'Full Stack Developer | DevOpsEngineer',
-    location: 'Manila PH',
-    description: 'Email: leonardolouie30@gmail.com'
-  }
-  
-
   return (
     <>
       <Layout

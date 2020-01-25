@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import LogoList from '../logoList'
+import LazyLoad from 'react-lazyload'
 
 export default function Hero({ title, subTitle, body, buttonTitle, social }) {
   return (
@@ -18,9 +19,11 @@ export default function Hero({ title, subTitle, body, buttonTitle, social }) {
         )}
       </div>
       {social && 
-      <div className="mt-10">
-        <LogoList logolistItem={social} />
-      </div>}
+        <LazyLoad>
+          <div className="mt-10">
+            <LogoList logolistItem={social} />
+          </div>
+        </LazyLoad>}
     </div>
   )
 }
