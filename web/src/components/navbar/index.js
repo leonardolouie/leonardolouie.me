@@ -9,7 +9,7 @@ export default function navbar({ icon }) {
     setOpen(!isOpen)
   }
 
-  const navBar = [{ name: 'projects', link: 'project' }, { name: 'blogs', link: 'blog' }, { name: 'Contact me', link: 'contact-me' }]
+  const navBar = [{ name: 'projects', link: 'project' }, { name: 'blogs', link: 'blog' }, { name: 'Contact', link: 'contact-me' }]
 
   return (
     <header className="bg-primary text-white font-bold">
@@ -24,7 +24,7 @@ export default function navbar({ icon }) {
             <img src={hamburger} className="w-6 md:hidden" onClick={handleOpen} />
           </div>
         </div>
-        <div>
+        <div className="px-5 sm:px-0">
           <ul className={`py-5 md:py-0 md:flex ${isOpen ? '' : 'hidden'}`}>
             {navbar &&
               navBar.map((value, key) => {
