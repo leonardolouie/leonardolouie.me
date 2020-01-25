@@ -66,12 +66,6 @@ const LogoListItem = [
   }
 ]
 
-const profilecard = {
-  name: 'Leonardo Louie Ordonez',
-  job: 'Software Engineer @ Unosoft Labs',
-  location: 'Manila PH',
-  description: 'Email: leonardolouie30@gmail.com'
-}
 
 const socials = [
   { image: twitter, 
@@ -108,12 +102,13 @@ const IndexPage = ({ data }) => {
           <Hero
             title={'Hi I am Leonardo Louie'}
             body={
-              'This is Leonardo Louie Ordoñez currently working as Software Engineer at Unosoft Labs. I am a full stack developer who aims to design the product until it is delivered to the user. Besides, I’m fond of making websites and mobile apps: specialize in JAMSTACK (Static Site).'
+              'This is Leonardo Louie Ordoñez , I am a full stack developer who aims to design the product until it is delivered to the user. Besides, I’m fond of making websites and mobile apps: specialize in JAMSTACK (Static Site).'
             }
             subTitle={'FullStack Developer/ Music Enthusiast / DevOps Engineer'}
             social={socials}
           />
         </Section>
+
 
         {projects && <Section
           title="PROJECTS AND WORKS"
@@ -136,6 +131,13 @@ const IndexPage = ({ data }) => {
             })}
         </Section> }
 
+        <Section
+          title="TECH STACK"
+          subtitle="I've started my web development career by using Laravel PHP, CSS and JQUERY. As of the moment, I’m working for a year with lots of technologies encountered and used for the projects I made. In addition to that, I have learned more frameworks of JS such as Node and React. While, for DevOps part, I am currently using Heroku, Netlify and some services on AWS."
+        >
+          <LogoList logolistItem={LogoListItem} />
+        </Section>
+
         {blogs && <Section title="BLOGS" subtitle="My daily routines, coding lessons is here">
           {blogs &&
             blogs.edges.map((value, key) => {
@@ -152,20 +154,6 @@ const IndexPage = ({ data }) => {
               )
             })}
         </Section> }
-
-        <Section
-          title="TECH STACK"
-          subtitle="I've started my web development career by using Laravel PHP, CSS and JQUERY. As of the moment, I’m working for a year with lots of technologies encountered and used for the projects I made. In addition to that, I have learned more frameworks of JS such as Node and React. While, for DevOps part, I am currently using Heroku, Netlify and some services on AWS."
-        >
-          <LogoList logolistItem={LogoListItem} />
-        </Section>
-
-        <Section
-          title="CONTACT ME"
-          subtitle="If you’re interested to work with me, you can ping me from all the social media sites below:"
-        >
-          <ProfileCard {...profilecard} />
-        </Section>
       </Layout>
     </>
   )
@@ -179,7 +167,7 @@ IndexPage.propTypes = {
 
 export const query = graphql`
   query ProjectQuery {
-    projects: allSanityProject(filter: { show: { eq: true } }, limit: 3) {
+    projects: allSanityProject(filter: { show: { eq: true } }, limit: 6) {
       edges {
         node {
           slug {
@@ -223,7 +211,7 @@ export const query = graphql`
         }
       }
     }
-    blogs: allSanityBlog(filter: { show: { eq: true } }) {
+    blogs: allSanityBlog(filter: { show: { eq: true }}, limit: 6) {
       edges {
         node {
           title
