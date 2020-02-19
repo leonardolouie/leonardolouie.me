@@ -3,7 +3,6 @@ import Layout from 'components/layout'
 import Section from 'components/section'
 import Hero from 'components/hero'
 import Cards from 'components/cards'
-import ProfileCard from 'components/profileCard'
 import LogoList from 'components/logoList'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
@@ -16,6 +15,7 @@ import contentful from 'images/contentful.png'
 import sanity from 'images/sanity.png'
 import redux from 'images/redux.png'
 import vue from 'images/vue.png'
+import LazyLoad from 'react-lazyload'
 
 import twitter from 'images/twitter-brands.svg'
 import instagram from 'images/instagram-brands.svg'
@@ -135,7 +135,9 @@ const IndexPage = ({ data }) => {
           title="TECH STACK"
           subtitle="I've started my web development career by using Laravel PHP, CSS and JQUERY. As of the moment, I’m working for a year with lots of technologies encountered and used for the projects I made. In addition to that, I have learned more frameworks of JS such as Node and React. While, for DevOps part, I am currently using Heroku, Netlify and some services on AWS."
         >
-          <LogoList logolistItem={LogoListItem} />
+          <LazyLoad>
+            <LogoList logolistItem={LogoListItem} />
+          </LazyLoad>
         </Section>
 
         {blogs && <Section title="BLOGS" subtitle="My daily routines, coding lessons is here">
