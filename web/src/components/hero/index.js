@@ -18,12 +18,13 @@ export default function Hero({ title, subTitle, body, buttonTitle, social }) {
           <button className="bg-white hover:bg-dim text-primary font-bold py-2 px-4 rounded-full">{buttonTitle}</button>
         )}
       </div>
-      {social && 
+      {social && (
         <LazyLoad>
           <div className="mt-10">
             <LogoList logolistItem={social} />
           </div>
-        </LazyLoad>}
+        </LazyLoad>
+      )}
     </div>
   )
 }

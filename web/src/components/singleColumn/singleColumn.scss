@@ -1,16 +1,14 @@
-
-
 .single-column {
   transition: 0.4s ease-out;
 
   &:hover {
     transform: translateY(10px);
-   &:before {
-          opacity: 1;
-      }
+    &:before {
+      opacity: 1;
+    }
     .card__info {
-          opacity: 1;
-          transform: translateY(0px);
-      }
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
 }

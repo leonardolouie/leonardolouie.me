@@ -32,11 +32,10 @@ export default function SingleColumn({ keywords, type, title, description, slug,
             </div>
           )}
         </div>
-        <div> 
-          <Button text={'Read More'} link={`${type}/${slug}`}/>
+        <div>
+          <Button text={'Read More'} link={`${type}/${slug}`} />
         </div>
       </div>
-     
     </div>
   )
 }

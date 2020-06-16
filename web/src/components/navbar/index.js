@@ -9,7 +9,11 @@ export default function navbar({ icon }) {
     setOpen(!isOpen)
   }
 
-  const navBar = [{ name: 'projects', link: 'project' }, { name: 'blogs', link: 'blog' }, { name: 'Contact', link: 'contact-me' }]
+  const navBar = [
+    { name: 'projects', link: 'project' },
+    { name: 'blogs', link: 'blog' },
+    { name: 'Contact', link: 'contact-me' }
+  ]
 
   return (
     <header className="bg-primary text-white font-bold">
