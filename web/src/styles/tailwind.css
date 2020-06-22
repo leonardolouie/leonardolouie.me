@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-secondary;
+  @apply bg-white;
 }
 
 .logo {

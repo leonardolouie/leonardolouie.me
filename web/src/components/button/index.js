@@ -6,7 +6,10 @@ const Button = ({ text, link, type, style, handler }) => {
   return (
     <>
       {type === 'a' ? (
-        <a className="text-white border-2 border-white-700 py-2 px-3 bg-transparent hover:bg-dim" href={link}>
+        <a
+          className="text-primary border-2 border-secondary py-2 px-3 bg-transparent hover:bg-primary hover:text-white"
+          href={link}
+        >
           {text}
         </a>
       ) : (

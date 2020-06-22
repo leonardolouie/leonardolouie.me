@@ -16,7 +16,7 @@ export default function Section({
   return (
     <div className={style}>
       <div className="container mx-auto py-10 section fadedInAnimation">
-        <h1 className="text-white text-center text-white text-2xl">{title && title}</h1>
+        <h1 className="text-primary text-center text-white text-2xl">{title && title}</h1>
         <p className="text-dim text-center  text-lg lg:mx-48">{subtitle && subtitle}</p>
         <div className={`flex flex-auto justify-center flex-wrap mt-10 ${sectionTypes}`}>{children}</div>
         <div>

@@ -119,7 +119,7 @@ const IndexPage = ({ data }) => {
               })}
           </Section>
         )}
-        <Section title="More info about me?" subtitle="Kindly see my cv or download it by yourself">
+        <Section title="More info about me?" subtitle="Kindly see my cv or download it by yourself or just email me at leonardolouie30@gmail.com">
           <Button text="Click here to redirect to my personal cv" type="a" link="https://drive.google.com/file/d/1Lo0dcsssgrzbKo9_Cpaz-SrXcjLK0jVP/view?usp=sharing" />
         </Section>
 

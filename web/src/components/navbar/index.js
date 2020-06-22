@@ -25,7 +25,7 @@ export default function navbar({ icon }) {
               {icon && <img className="w-20 h-20" src={icon.asset.fluid.src} />}
             </AniLink>
           </div>
-          <div className="block lg:hidden">
+          <div className="block md:hidden">
             <div className={isOpen ? 'header-nav-toggle-icon open' : 'header-nav-toggle-icon'} onClick={handleOpen}>
               <span></span>
               <span></span>

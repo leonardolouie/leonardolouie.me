@@ -41,11 +41,11 @@ const Post = ({ title, publishedAt, url, description, _rawBody, keywords }) => {
       {title ? (
         <div className="flex flex-col">
           <div>
-            <h1 className="text-white  text-2xl sm:text-5xl">{title && title}</h1>
-            {description && <p className="text-white text-xl">{description}</p>}
+            <h1 className="text-primary  text-2xl sm:text-5xl">{title && title}</h1>
+            {description && <p className="text-secondary text-xl">{description}</p>}
             <p className="text-dim mb-2">{publishedAt && publishedAt}</p>
             {url && (
-              <a className="text-dim hover:text-white" href={url}>
+              <a className="text-dim hover:text-primary" href={url}>
                 {url}
               </a>
             )}
