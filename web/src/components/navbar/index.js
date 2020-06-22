@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import hamburger from 'images/bars-solid.svg'
 import PropTypes from 'prop-types'
 import './navbar.scss'
+
 
 export default function navbar({ icon }) {
   const [isOpen, setOpen] = useState(false)
@@ -17,7 +17,7 @@ export default function navbar({ icon }) {
   ]
 
   return (
-    <header className="bg-white font-bold shadow-md">
+    <header className="bg-white font-bold shadow-lg">
       <div className="py-2 px-5 md:flex justify-between items-center md:px-1 container mx-auto">
         <div className="flex justify-between items-center">
           <div>

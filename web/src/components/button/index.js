@@ -7,7 +7,8 @@ const Button = ({ text, link, type, style, handler }) => {
     <>
       {type === 'a' ? (
         <a
-          className="text-primary border-2 border-secondary py-2 px-3 bg-transparent hover:bg-primary hover:text-white"
+          className="border-2 border-secondary py-2 px-3 bg-primary text-white hover:bg-white hover:text-primary"
+          target="_blank"
           href={link}
         >
           {text}
