@@ -10,8 +10,8 @@ import ReactTooltip from 'react-tooltip'
 export default function SingleColumn({ keywords, type, title, description, slug, image }) {
   return (
     <div className="single-column mb-10 bg-primary flex flex-col sm:flex-row w-full justify-between shadow-lg  py-5 sm:py-10 sm:px-10 items-center rounded-lg">
-      <div className="w-64 hidden sm:block">
-        <Image className="w-auto" fluid={image} />
+      <div className="w-64 hidden sm:block =">
+        <Image className="w-auto h-40 object-fill object-center" fluid={image} />
       </div>
       <div className="w-3/4 ml-5">
         <AniLink cover bg="#252627" to={`${type}/${slug}`}>

@@ -1,0 +1,68 @@
+@import '../../styles/globals';
+
+.header-nav-toggle-icon {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.header-nav-toggle-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: $secondary;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.header-nav-toggle-icon span:nth-child(1) {
+  top: 0px;
+}
+
+.header-nav-toggle-icon span:nth-child(2) {
+  top: 8px;
+}
+
+.header-nav-toggle-icon span:nth-child(3) {
+  top: 17px;
+}
+
+.header-nav-toggle-icon.open span:nth-child(1) {
+  top: 16px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.header-nav-toggle-icon.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.header-nav-toggle-icon.open span:nth-child(3) {
+  top: 16px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}

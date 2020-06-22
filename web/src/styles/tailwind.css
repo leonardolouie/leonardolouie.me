@@ -57,8 +57,6 @@ span,
 li {
   font-family: 'Segoe UI', sans-serif;
   font-style: normal;
-
-  @apply text-dim;
 }
 
 /** animations**/

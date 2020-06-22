@@ -3,6 +3,7 @@ import Layout from 'components/layout'
 import Section from 'components/section'
 import Hero from 'components/hero'
 import Cards from 'components/cards'
+import Button from 'components/Button'
 import LogoList from 'components/logoList'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
@@ -30,9 +31,9 @@ const LogoListItem = [
     link: 'https://reactjs.org/'
   },
   {
-    image:vue,
-    imageAlt:'vue js',
-    link:'https://vuejs.org/'
+    image: vue,
+    imageAlt: 'vue js',
+    link: 'https://vuejs.org/'
   },
   {
     image: node,
@@ -66,25 +67,12 @@ const LogoListItem = [
   }
 ]
 
-
 const socials = [
-  { image: twitter, 
-    link: 'https://twitter.com/louieofficial30', 
-    imageAlt: 'twitter' 
-  },
+  { image: twitter, link: 'https://twitter.com/louieofficial30', imageAlt: 'twitter' },
 
-  { image: instagram, 
-    link: 'https://instagram.com/leonardolouie',
-    imageAlt: 'twitter'
-  },
-  { image: github, 
-    link: 'https://github.com/leonardolouie', 
-    imageAlt: 'github' 
-  },
-  { image: dribble, 
-    link: 'https://dribbble.com/leonardolouie30', 
-    imageAlt: 'dribble' 
-  },
+  { image: instagram, link: 'https://instagram.com/leonardolouie', imageAlt: 'twitter' },
+  { image: github, link: 'https://github.com/leonardolouie', imageAlt: 'github' },
+  { image: dribble, link: 'https://dribbble.com/leonardolouie30', imageAlt: 'dribble' },
   {
     image: linkedin,
     link: 'https://www.linkedin.com/in/leonardo-louie-ordo%C3%B1ez-940673176/',
@@ -109,27 +97,32 @@ const IndexPage = ({ data }) => {
           />
         </Section>
 
+        {projects && (
+          <Section
+            title="PROJECTS AND WORKS"
+            subtitle="Below are samples of my previous works and ongoing projects made by progressive programming languages in the world"
+          >
+            {projects &&
+              projects.edges.map((value, key) => {
+                return (
+                  <Cards
+                    url={value.node.url}
+                    title={value.node.title}
+                    image={value.node.image.asset.fluid}
+                    imageAlt={value.node.image.caption}
+                    description={value.node.description}
+                    type={'project'}
+                    slug={value.node.slug.current}
+                    key={key}
+                  />
+                )
+              })}
+          </Section>
+        )}
+        <Section title="More info about me?" subtitle="Kindly see my cv or download it by yourself">
+          <Button text="Click here to redirect to my personal cv" type="a" link="https://drive.google.com/file/d/1Lo0dcsssgrzbKo9_Cpaz-SrXcjLK0jVP/view?usp=sharing" />
+        </Section>
 
-        {projects && <Section
-          title="PROJECTS AND WORKS"
-          subtitle="Below are samples of my previous works and ongoing projects made by progressive programming languages in the world"
-        >
-          {projects &&
-            projects.edges.map((value, key) => {
-              return (
-                <Cards
-                  url={value.node.url}
-                  title={value.node.title}
-                  image={value.node.image.asset.fluid}
-                  imageAlt={value.node.image.caption}
-                  description={value.node.description}
-                  type={'project'}
-                  slug={value.node.slug.current}
-                  key={key}
-                />
-              )
-            })}
-        </Section> }
 
         <Section
           title="TECH STACK"
@@ -140,7 +133,7 @@ const IndexPage = ({ data }) => {
           </LazyLoad>
         </Section>
 
-        {blogs && <Section title="BLOGS" subtitle="My daily routines, coding lessons is here">
+        {/* {blogs && <Section title="BLOGS" subtitle="My daily routines, coding lessons is here">
           {blogs &&
             blogs.edges.map((value, key) => {
               return (
@@ -155,7 +148,7 @@ const IndexPage = ({ data }) => {
                 />
               )
             })}
-        </Section> }
+        </Section> } */}
       </Layout>
     </>
   )
@@ -213,7 +206,7 @@ export const query = graphql`
         }
       }
     }
-    blogs: allSanityBlog(filter: { show: { eq: true }}, limit: 6) {
+    blogs: allSanityBlog(filter: { show: { eq: true } }, limit: 6) {
       edges {
         node {
           title
