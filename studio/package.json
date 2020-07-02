@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "sanity-gatsby-portfolio-studio",
+  "name": "leonardo-louie-studio",
   "version": "1.0.0",
   "main": "package.json",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "leonardolouie",
   "scripts": {
     "develop": "sanity start",
     "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",

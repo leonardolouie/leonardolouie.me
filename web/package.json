@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "sanity-gatsby-portfolio-web",
+  "name": "leonardo-louie-web",
   "version": "1.0.0",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "leonardolouie",
   "scripts": {
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
