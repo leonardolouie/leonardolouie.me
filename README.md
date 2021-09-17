@@ -1,6 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2282ccda-ed93-42aa-aba8-74fec8fd9fb9/deploy-status)](https://app.netlify.com/sites/gratefuldev-web/deploys)
+
+
+
 ## My Portofolio made with sanity.io + gatsby js  + netlify
-
-
 ## What you have
 
 - A blazing fast portfolio with [Gatsby.js](https://gatsbyjs.org)
